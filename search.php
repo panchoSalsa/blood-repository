@@ -26,6 +26,8 @@
         <script src="js/ui.core.js" type="text/javascript"></script>
         <script src="js/ui.tabs.js" type="text/javascript"></script>
 
+        <script src = "js/header.js" type="text/javascript"></script>
+
     </head>
 
     <body>
@@ -95,6 +97,8 @@
                 $('#container-1 > ul').tabs({ fx: { opacity: 'toggle'} });
             });
         </script>
+
+        <script src="js/header.js" type="text/javascript"></script>
 
     </body>
 </html>

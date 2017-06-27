@@ -43,6 +43,7 @@
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
+
         <?php 
             include 'auth-test.php';
             include 'header.php';
@@ -52,6 +53,8 @@
 
     <body>
         <h1>Welcome to the MIND Repo Management System </h1>
+
+        <script src="js/header.js" type="text/javascript"></script>
     </body>
 
 
