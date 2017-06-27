@@ -1,0 +1,7 @@
+*.csv
+*.sql
+*.pdf
+*.sublime*
+*.db
+*.prl_rec*
+*.xlsx
