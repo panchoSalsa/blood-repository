@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
 
-        <title>TurnKey LAMP</title>
+        <title>Blood Repository</title>
         
         <link rel="stylesheet" href="css/ui.tabs.css" type="text/css" media="print, projection, screen"/>
         <link rel="stylesheet" href="css/base.css" type="text/css"/>
@@ -30,27 +30,14 @@
             });
         </script>
 
+        <?php //include 'auth-test.php';?>
         <?php include 'header.php';?>
 
     </head>
 
     <body>
 
-
-
-
-
         <h1>Welcome to the MIND Repo Management System </h1>
-        
-
-        <div id="container-1">
-        	<div ng-app="">
-        		<p> Username: <input type= "text" ng-model = "name"></p>
-        		<h1> Hello {{name}}!</h1>
-        </div>
-    
-
-
 
     </body>
 

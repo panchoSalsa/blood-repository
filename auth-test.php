@@ -17,39 +17,9 @@
     // Create a new authentication object
     $auth_object = new WebAuth();
 
-    // Both of these commands make it possible
-    // to go to http://mypage.uci.edu/auth-test.php?login=1
-    // or http://mypage.uci.edu/auth-test.php?logout=1
-    // so people can login or logout.
-
-
-    if ($_GET[login]) { 
-        print('before login()');
-        $auth_object->login();
-        print('after login()');
-        $auth_object->checkAuth();
-    }
-
-    if ($_GET[logout]) { 
-        $auth_object->logout(); 
-    }
-
-
-    // print('checking isLoggedIn()');
     // Next, we can check whether or not you're logged
     // in by checking the $auth->isLoggedIn()  method
-    if ($auth_object->isLoggedIn()) {
-            print("success");
+    if (!$auth_object->isLoggedIn()) {
+        Header('Location: ' . $auth_object->login_url);
     }
-    else {
-        print("you're not logged in, sorry...");
-    }
-
-    // Also, you can look at all the values within
-    // the auth object by using the code:
-
-    print "<pre>";
-    print_r ($auth_object);
-    print "</pre>";
-
 ?>
