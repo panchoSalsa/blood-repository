@@ -6,12 +6,13 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
 
-        <title>TurnKey LAMP</title>
+        <title>Blood Repository</title>
         
         <link rel="stylesheet" href="css/ui.tabs.css" type="text/css" media="print, projection, screen"/>
         <link rel="stylesheet" href="css/base.css" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
 		<!-- jQuery library -->
@@ -20,56 +21,38 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script src="js/ui.core.js" type="text/javascript"></script>
         <script src="js/ui.tabs.js" type="text/javascript"></script>
-        <script type="text/javascript">
-
-
-        </script>
-
-        <?php include 'header.php';?>
-
-
-        <style>
-
-            .form-group {
-                display: inline-block;
-                text-align: center;
-            }
-
-        </style>
-
-
-
     </head>
 
     <body>
+        <?php 
+            include 'auth-test.php';
+            include 'header.php';
+        ?>
 
-    <form align= "center" >
-        <div class="form-group">
-            <label for="exampleInputEmail1">Patient ID</label>
-            <input type="patientID" class="form-control" id="patientID_form" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">Enter the patient ID of the sample you want to look up.</small>
+        <form align= "center" >
+            <div class="form-group">
+                <label for="exampleInputEmail1">Patient ID</label>
+                <input type="patientID" class="form-control" id="patientID_form" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Enter the patient ID of the sample you want to look up.</small>
+            </div>
 
-        </div>
-        <div>
-            <button onclick="return search_by_id()" type="submit" class="btn btn-primary">Submit</button>
+            <div>
+                <button onclick="return search_by_id()" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
 
-            <script type="text/javascript">
-                function search_by_id() {
-                    var patient_id= document.getElementById('patientID_form').value;
-                    window.location= "search.php?id=" + patient_id;
-                    return false;
-                }
-            </script>
 
-        </div>
-    
-    </form>
+        <script type="text/javascript">
+            function search_by_id() {
+                var patient_id= document.getElementById('patientID_form').value;
+                window.location= "search.php?id=" + patient_id;
+                return false;
+            }
+        </script>
 
     </body>
-
-
 </html>

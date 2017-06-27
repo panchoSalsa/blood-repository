@@ -1,0 +1,9 @@
+.form-group {
+	display: inline-block;
+	text-align: center;
+}
+
+.row{
+	max-width: 800px;
+	padding-left: 50px;
+}

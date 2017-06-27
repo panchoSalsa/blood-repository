@@ -13,6 +13,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
+        <!-- header.php link tags -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+        <link rel=icon href="/images/UCI_mindlogo.jpg">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -30,15 +37,21 @@
             });
         </script>
 
-        <?php //include 'auth-test.php';?>
-        <?php include 'header.php';?>
+        <!-- header.php script tags -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+        <?php 
+            include 'auth-test.php';
+            include 'header.php';
+        ?>
 
     </head>
 
     <body>
-
         <h1>Welcome to the MIND Repo Management System </h1>
-
     </body>
 
 
