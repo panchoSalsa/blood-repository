@@ -33,10 +33,8 @@
             include 'auth-test.php';
             include 'header.php';
 
-            $servername= "localhost";
-            $username = "root";
-            $password= "503R4iN07$";
-            $dbname= "blood_repo";
+            // load dbconnect config
+            include '../db-connection/dbconfig.php';
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             if ($conn -> connect_error) {

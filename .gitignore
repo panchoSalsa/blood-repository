@@ -5,3 +5,4 @@
 *.db
 *.prl_rec*
 *.xlsx
+dbconfig.php
