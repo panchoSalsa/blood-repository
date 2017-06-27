@@ -12,11 +12,33 @@
 <?php
 
 	function checkID($id) {
-		$validIDs = array("frfranco");
-		if (in_array($id, $validIDs)) {
-			return true;
+		// $validIDs = array("frfranco");
+
+        $servername= "localhost";
+        $username = "root";
+        $password= "503R4iN07$";
+        $dbname= "blood_repo";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn -> connect_error) {
+            die("Connection failed: " .$conn->connect_error);
+        }
+
+        $sql = "select * from users where uci_net_id= '". $id . "' limit 1";
+        $result= $conn->query($sql);
+
+        // check for an empty result
+		if ($result->num_rows > 0) {
+			$row = mysqli_fetch_assoc($result);
+
+			// check if active bit is on
+			if ($row['active'] == 1) {
+				// user is authenticated and active in users table
+				return true;
+			}
 		} else {
-			return false;
+			// user is not authenticated in users table
+			return false; 
 		}
 	}
 
