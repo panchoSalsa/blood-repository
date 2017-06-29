@@ -83,13 +83,13 @@
                         <li class="list-group-item col-xs-6"><b>Row: </b> <?php echo $row["s2boxrow"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>Col: </b> <?php echo $row["s2boxcol"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>Plasma Count: </b> <?php echo $row["s2plct"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Serum Count: </b> <?php echo $row["s2serct"]; ?> </li>        
+                        <li class="list-group-item col-xs-6"><b>Serum Count: </b> <?php echo $row["s2serct"]; ?> </li>
                     </ul>
                     <hr />
                     <?php
                 } 
             }
-            $conn -> close(); 
+            $conn -> close();
         ?>
 
         <script type="text/javascript">
