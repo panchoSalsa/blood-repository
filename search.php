@@ -45,7 +45,7 @@
 
             $patientID= $_GET['id'];
 
-            $sql = "select * from blood where patient_id= ". $patientID;
+            $sql = "select * from blood_samples where patient_id= ". $patientID;
             $result= $conn->query($sql);
 
             echo "<div style= 'padding-left: 45px'> <h3> Search results for patient ID: ". $patientID."</h3> </div>";
@@ -56,34 +56,22 @@
                     <ul class="list-group row">
                         <li style= "background-color:#8ab1db;" class="list-group-item"><h5> <b> ID: <?php echo $row["id"]; ?> </b></h5></li>
                         <li class="list-group-item col-xs-6"><b>Synd: </b> <?php echo $row["synd"]; ?>  </li>
-                        <li class="list-group-item col-xs-6"><b>MCIcat: </b> <?php echo $row["MCIcat"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>MCIcat: </b> <?php echo $row["mci_cat"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>Dx: </b> <?php echo $row["dx"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>Visit Number: </b> <?php echo $row["visit"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Date of Visit: </b> <?php echo $row["visitdate"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Date of Visit: </b> <?php echo $row["visit_date"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>Age: </b> <?php echo $row["age"]; ?> </li>
                         <li class="list-group-item col-xs-6"><b>MMSE: </b> <?php echo $row["mmse"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Drawn on </b> <?php echo $row["drawdate"]."<b> at time </b>".$row["drawtime"] ?></li>
-                        <li class="list-group-item col-xs-6"><b>Frozen Date: </b> <?php echo $row["frzndate"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Frozen Time: </b> <?php echo $row["frzntime"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Created By: </b> <?php echo $row["createdby"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Created Date: </b> <?php echo $row["createddate"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Modified By: </b> <?php echo $row["modifiedby"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Modified Date: </b> <?php echo $row["modifieddate"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Drawn on </b> <?php echo $row["draw_date"]."<b> at time </b>".$row["drawtime"] ?></li>
+                        <li class="list-group-item col-xs-6"><b>Frozen Date: </b> <?php echo $row["frozen_date"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Frozen Time: </b> <?php echo $row["frozen_time"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Created By: </b> <?php echo $row["created_by"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Created Date: </b> <?php echo $row["created_date"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Modified By: </b> <?php echo $row["modified_by"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Modified Date: </b> <?php echo $row["modified_date"]; ?> </li>
                         <li class="list-group-item col-xs-12"><b>Comments: </b> <?php echo $row["comments"]; ?> </li>
-                        <li style= "background-color:#d8e5f3;" class="list-group-item col-xs-12"> <b> SAMPLE 1 </b> </li>
-                        <li class="list-group-item col-xs-6"><b>Rack: </b> <?php echo $row["s1frzrk"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Box: </b> <?php echo $row["s1frzbx"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Row: </b> <?php echo $row["s1boxrow"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Col: </b> <?php echo $row["s1boxcol"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Plasma Count: </b> <?php echo $row["s1plct"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Serum Count: </b> <?php echo $row["s1serct"]; ?> </li>
-                        <li style= "background-color:#d8e5f3;" class="list-group-item col-xs-12"> <b> SAMPLE 2 </b> </li>
-                        <li class="list-group-item col-xs-6"><b>Rack: </b> <?php echo $row["s2frzrk"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Box: </b> <?php echo $row["s2frzbx"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Row: </b> <?php echo $row["s2boxrow"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Col: </b> <?php echo $row["s2boxcol"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Plasma Count: </b> <?php echo $row["s2plct"]; ?> </li>
-                        <li class="list-group-item col-xs-6"><b>Serum Count: </b> <?php echo $row["s2serct"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Plasma Count: </b> <?php echo $row["plasma_count"]; ?> </li>
+                        <li class="list-group-item col-xs-6"><b>Serum Count: </b> <?php echo $row["serum_count"]; ?> </li>
                     </ul>
                     <hr />
                     <?php

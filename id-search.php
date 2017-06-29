@@ -37,7 +37,7 @@
         <form align= "center" >
             <div class="form-group">
                 <label for="exampleInputEmail1">Patient ID</label>
-                <input type="patientID" class="form-control" id="patientID_form" aria-describedby="emailHelp">
+                <input type="patientID" class="form-control" id="patientID_form" aria-describedby="emailHelp" placeholder="4592">
                 <small id="emailHelp" class="form-text text-muted">Enter the patient ID of the sample you want to look up.</small>
             </div>
 

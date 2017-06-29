@@ -9,7 +9,7 @@
        <ul class="nav navbar-nav">
          <li><a href="index.php">Home</a></li>
          <li><a href="id-search.php">Search By ID</a></li>
-         <li><a href="index.php">Add/Remove Samples</a></li>
+         <li><a href="add-blood-sample.php">Add/Remove Samples</a></li>
          <li><a href="index.php">Browse</a></li>
         </ul>
         <button id="logout" type="button">Log Out</button>
