@@ -234,41 +234,33 @@ fieldset.scheduler-border {
 
                 <legend>Sample 1</legend>
                 <div class="form-group">
-                   <label for="box_one_id">Box ID</label>  
+                   <label for="sample_1_box_id">Box ID</label>  
                    <div>
-                      <input id="box_one_id" class="form-control" name="box_one_id" type="text">
+                      <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
                    </div>
-                   <label for="box_one_row">Box Row</label>  
+                   <label for="sample_1_box_row">Box Row</label>  
                    <div>
-                      <input id="box_one_row" class="form-control" name="box_one_row" type="text">
+                      <input id="sample_1_box_rowv" class="form-control" name="sample_1_box_row" type="text">
                    </div>
-                   <label for="box_one_column">Box Column</label>  
+                   <label for="sample_1_box_column">Box Column</label>  
                    <div>
-                      <input id="box_one_column" class="form-control" name="box_one_column" type="text">
-                   </div>
-                   <label for="sample_one_type">Sample Type</label>  
-                   <div>
-                      <input id="sample_one_type" class="form-control" name="sample_one_type" type="text">
+                      <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text">
                    </div>
                 </div>
 
                 <legend>Sample 2</legend>
                 <div class="form-group">
-                   <label for="box_two_id">Box 2 ID</label>  
+                   <label for="sample_2_box_id">Box ID</label>  
                    <div>
-                      <input id="box_two_id" class="form-control" name="box_two_id" type="text">
+                      <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
                    </div>
-                   <label for="box_two_row">Box Row</label>  
+                   <label for="sample_2_box_row">Box Row</label>  
                    <div>
-                      <input id="box_two_row" class="form-control" name="box_two_row" type="text">
+                      <input id="sample_2_box_rowv" class="form-control" name="sample_2_box_row" type="text">
                    </div>
-                   <label for="box_two_column">Box Column</label>  
+                   <label for="sample_2_box_column">Box Column</label>  
                    <div>
-                      <input id="box_two_column" class="form-control" name="box_two_column" type="text">
-                   </div>
-                   <label for="sample_two_type">Sample Type</label>  
-                   <div>
-                      <input id="sample_two_type" class="form-control" name="sample_two_type" type="text">
+                      <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text">
                    </div>
                 </div>
 

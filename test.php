@@ -12,6 +12,12 @@
     // $patientID= $_POST['id'];
     print_r($_POST);
 
+    // MySQL insert from POST
+    // source=http://forum.elxis.org/index.php?topic=7618.msg49175#msg49175
+
+
+    // adding Blood Sample 
+
     // sanitize data to avoid sql injection.
 
     $study = filter_input(INPUT_POST, 'study', FILTER_SANITIZE_NUMBER_INT);
@@ -39,6 +45,9 @@
 
 
     include 'vial-test.php';
+
+
+    // grab $sample_1_blood_sample_id from previous sql insertion
 
 
     // Sample 1
