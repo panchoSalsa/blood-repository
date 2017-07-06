@@ -28,6 +28,7 @@
 
 
     $sql = "INSERT INTO test (study, patient_id, sex, name) VALUES (". $study . ", " . $patient_id . ", '" . $sex  . "', '" . $name . "')";
+
     //print_r($sql);
 
     if ($conn->query($sql) === TRUE) {
@@ -35,6 +36,11 @@
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+
+    include 'vial-test.php';
+
+    create_vials(4,1,'serum','A',13, $conn);
 
     $conn -> close();
 ?>
