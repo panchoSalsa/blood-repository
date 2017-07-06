@@ -30,21 +30,27 @@
     $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
     $sex = filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $mmse = filter_input(INPUT_POST, 'mmse', FILTER_SANITIZE_NUMBER_INT);
+    $draw_date = filter_input(INPUT_POST, 'draw_date', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $staff = filter_input(INPUT_POST, 'staff', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $frozen_date = filter_input(INPUT_POST, 'frozen_date', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $created_by = filter_input(INPUT_POST, 'created_by', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $created_date = filter_input(INPUT_POST, 'created_date', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $modified_by = filter_input(INPUT_POST, 'modified_by', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $modified_date = filter_input(INPUT_POST, 'modified_date', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $comments =filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
 
     // using the following format "Y/m/d" because MySQL stores dates as 0000-00-00
-    $visit_date=date("Y/m/d",strtotime($visit_date));
+    $visit_date = date("Y/m/d",strtotime($visit_date));
+    $draw_date = date("Y/m/d",strtotime($draw_date));
+    $frozen_date = date("Y/m/d",strtotime($frozen_date));
+    $created_date = date("Y/m/d",strtotime($created_date));
+    $modified_date = date("Y/m/d",strtotime($modified_date));
 
-
-    $sql = "INSERT INTO blood_samples (study, patient_id, synd, mci_cat, dx, visit, visit_date, age, sex, mmse, staff, created_by, modified_by, comments, plasma_count, serum_count) 
-VALUES (". $study . ", " . $patient_id . ", '" . $synd  . "', '" . $mci_cat . "', '" . $dx . "', " . $visit  . ", '" . $visit_date . "', " . $age .
-        ", '" . $sex . "', " . $mmse  . ", '" . $staff . "', '" . $created_by . "', '" . $modified_by . "', '" . $comments . "', " . 8 . ", " . 8 . ");";
+    $sql = "INSERT INTO blood_samples (study, patient_id, synd, mci_cat, dx, visit, visit_date, age, sex, mmse, draw_date, staff, frozen_date, created_by, created_date, modified_by, modified_date, comments, plasma_count, serum_count) 
+    VALUES (". $study . ", " . $patient_id . ", '" . $synd  . "', '" . $mci_cat . "', '" . $dx . "', " . $visit  . ", '" . $visit_date . "', " . $age .
+        ", '" . $sex . "', " . $mmse  . ", '" . $draw_date . "', '" . $staff . "', '" . $frozen_date . "', '" . $created_by . "', '". $created_date . "', '" . $modified_by . "', '" . $modified_date . "', '". $comments . "', " . 8 . ", " . 8 . ");";
     print_r($sql);
-
 
     $blood_sample_id = null;
     if ($conn->query($sql) === TRUE) {
