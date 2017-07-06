@@ -119,10 +119,10 @@ fieldset.scheduler-border {
                    <div>
                       <input id="mmse" class="form-control" name="mmse" type="text">
                     </div>
-<!--                    <label for="draw_date">Draw Date</label>  
+                   <label for="draw_date">Draw Date</label>  
                    <div>
-                      <input id="draw_date" class="form-control" name="draw_date" type="text">
-                   </div> -->
+                      <input id="draw_date" class="form-control" name="draw_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+                   </div>
 <!--                    <label for="draw_time">Draw Time</label> 
                    <div>
                       <input id="draw_time" class="form-control" name="draw_time" type="text">
@@ -131,10 +131,10 @@ fieldset.scheduler-border {
                    <div>
                       <input id="staff" class="form-control" name="staff" type="text">
                    </div>
-<!--                    <label for="frozen_date">Frozen Date</label> 
+                   <label for="frozen_date">Frozen Date</label> 
                    <div>
-                      <input id="frozen_date" class="form-control" name="frozen_date" type="text">
-                    </div> -->
+                      <input id="frozen_date" class="form-control" name="frozen_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+                    </div>
 <!--                    <label for="frozen_time">Frozen Time</label>  
                    <div>
                       <input id="frozen_time" class="form-control" name="frozen_time" type="text">
@@ -143,19 +143,19 @@ fieldset.scheduler-border {
                    <div>
                       <input id="created_by" class="form-control" name="created_by" type="text">
                     </div>
-<!--                    <label for="created_date">Created Date</label> 
+                   <label for="created_date">Created Date</label> 
                    <div>
-                      <input id="created_date" class="form-control" name="created_date" type="text">
-                    </div> -->
+                      <input id="created_date" class="form-control" name="created_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+                    </div>
 
                    <label for="modified_by">Modified By</label>  
                    <div>
                       <input id="modified_by" class="form-control" name="modified_by" type="textarea">
                    </div>
-<!--                    <label for="modified_date">Modified Date</label>  
+                   <label for="modified_date">Modified Date</label>  
                    <div>
-                      <input id="modified_date" class="form-control" name="modified_date" type="textarea">
-                   </div> -->
+                      <input id="modified_date" class="form-control" name="modified_date" type="textarea" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+                   </div>
                    <label for="comments">Comments</label> 
                    <div>
                       <textarea id="comments" class="form-control" name="comments" rows="4"></textarea>
