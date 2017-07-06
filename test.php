@@ -22,8 +22,17 @@
 
     $study = filter_input(INPUT_POST, 'study', FILTER_SANITIZE_NUMBER_INT);
     $patient_id = filter_input(INPUT_POST, 'patient_id', FILTER_SANITIZE_NUMBER_INT);
+    $synd = filter_input(INPUT_POST, 'synd', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $mci_cat = filter_input(INPUT_POST, 'mci_cat', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $dx = filter_input(INPUT_POST, 'dx', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $visit = filter_input(INPUT_POST, 'visit', FILTER_SANITIZE_NUMBER_INT);
+    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
     $sex = filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $mmse = filter_input(INPUT_POST, 'mmse', FILTER_SANITIZE_NUMBER_INT);
+    $staff = filter_input(INPUT_POST, 'staff', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $created_by = filter_input(INPUT_POST, 'created_by', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $modified_by = filter_input(INPUT_POST, 'modified_by', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $comments =filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
     // $study = $_POST['study'];
     // $patient_id = $_POST['patient_id'];
@@ -33,9 +42,12 @@
     //echo $study . " " . $patient_id . " " . $sex . " " . $name;
 
 
-    $sql = "INSERT INTO test (study, patient_id, sex, name) VALUES (". $study . ", " . $patient_id . ", '" . $sex  . "', '" . $name . "')";
+    // $sql = "INSERT INTO test (study, patient_id, sex, name) VALUES (". $study . ", " . $patient_id . ", '" . $sex  . "', '" . $name . "')";
 
-    //print_r($sql);
+    $sql = "INSERT INTO blood_samples (study, patient_id, synd, mci_cat, dx, visit, age, sex, mmse, staff, created_by, modified_by, comments) 
+    VALUES (". $study . ", " . $patient_id . ", '" . $synd  . "', '" . $mci_cat . "', '" . $dx . "', " . $visit  . ", " . $age .
+        ", '" . $sex . "', " . $mmse  . ", '" . $staff . "', '" . $created_by . "', '" . $modified_by . "', '" . $comments . "');";
+    print_r($sql);
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
