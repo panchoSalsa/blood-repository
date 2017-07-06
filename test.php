@@ -1,5 +1,5 @@
 <?php 
-    include 'auth-test.php';
+    //include 'auth-test.php';
 
     // load dbconnect config
     include '../db-connection/dbconfig.php';
@@ -11,45 +11,30 @@
 
     // $patientID= $_POST['id'];
     print_r($_POST);
-    // exit;
+
+    // sanitize data to avoid sql injection.
+
+    $study = filter_input(INPUT_POST, 'study', FILTER_SANITIZE_NUMBER_INT);
+    $patient_id = filter_input(INPUT_POST, 'patient_id', FILTER_SANITIZE_NUMBER_INT);
+    $sex = filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+
+    // $study = $_POST['study'];
+    // $patient_id = $_POST['patient_id'];
+    // $sex = $_POST['sex'];
+    // $name = $_POST['name'];
+
+    //echo $study . " " . $patient_id . " " . $sex . " " . $name;
 
 
-    $sql = "INSERT INTO blood_samples (study, patient_id, synd, visit_date, age, sex,
-     mmse, draw_date, draw_time, staff, frozen_date, frozen_time, created_by, created_date,
-      modified_by, modified_date, comments, plasma_count, serum_count) 
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	if (!$stmt = $conn->prepare($sql)) {
-	    die($db->error);
-	}
-	$stmt->bind_param("i,i,s,i,s,i,s,i,s,s,s,s,s,s,s,s,s,i,i", $_POST['study'], $_POST['patient_id'], $_POST['synd'], 
-		$_POST['visit_date'], $_POST['age'], $_POST['sex'], $_POST['mmse'], 
-		$_POST['draw_date'], $_POST['draw_time'], $_POST['staff'], $_POST['frozen_date'], 
-		$_POST['frozen_time'], $_POST['created_by'], $_POST['created_date'], $_POST['modified_by'], 
-		$_POST['modified_date'], $_POST['comments'], 2, 2);
+    $sql = "INSERT INTO test (study, patient_id, sex, name) VALUES (". $study . ", " . $patient_id . ", '" . $sex  . "', '" . $name . "')";
+    //print_r($sql);
 
- //    $sql = "INSERT INTO test (study) VALUES (?)";
-	// if (!$stmt = $conn->prepare($sql)) {
-	//     die($db->error);
-	// }
-	// $stmt->bind_param("s", $_POST['study']);
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
-	var_dump($stmt);
-	if (!$stmt->execute()) {
-	    die($stmt->error);
-	} else {
-		print_r('success');
-	}
-	$stmt->close();
-
-    // $sql = "select * from blood_samples where patient_id= ". $patientID;
-    // $result= $conn->query($sql);
-
-    // echo "<div style= 'padding-left: 45px'> <h3> Search results for patient ID: ". $patientID."</h3> </div>";
-
-    // if ($result->num_rows > 0) {
-    //     while($row = $result->fetch_assoc()) {
-
-    //     } 
-    // }
     $conn -> close();
 ?>
