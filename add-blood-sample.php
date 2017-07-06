@@ -70,81 +70,6 @@ fieldset.scheduler-border {
             include 'header.php';
         ?>
 
-<!--         <form>
-            <div class="form-group">
-                <label for="patient_id">Patient ID</label>
-                <input class="form-control" id="patient_id">
-
-                <label for="study">Study</label>
-                <input class="form-control" id="study">
-                
-                <label for="syndrome">Syndrome</label>
-                <input class="form-control" id="syndrome">
-                
-                <label for="patient_id">Patient ID</label>
-                <input class="form-control" id="patient_id">
-                
-                <label for="mci_cat">MCI Cat</label>
-                <input class="form-control" id="mci_cat">
-
-                <label for="dx">DX</label>
-                <input class="form-control" id="dx">
-                
-                <label for="visit">Visit</label>
-                <input class="form-control" id="visit">
-                
-                <label for="age">Age</label>
-                <input class="form-control" id="age">
-
-                <label for="sex">Sex</label>
-                <input class="form-control" id="sex">
-
-                <label for="mmse">MMSE</label>
-                <input class="form-control" id="mmse">
-                
-                <label for="draw_date">Draw Date</label>
-                <input class="form-control" id="draw_date">
-
-                <label for="draw_time">Draw Time</label>
-                <input class="form-control" id="draw_time">
-                
-                <label for="staff">Staff</label>
-                <input class="form-control" id="staff">
-                
-                <label for="frozen_date">Frozen Date</label>
-                <input class="form-control" id="frozen_date">
-
-                <label for="frozen_time">Frozen Time</label>
-                <input class="form-control" id="frozen_time">
-                
-                <label for="created_by">Created By</label>
-                <input class="form-control" id="created_by">
-                
-                <label for="created_date">Created Date</label>
-                <input class="form-control" id="created_date">
-
-                <label for="modified_by">Modified By</label>
-                <input class="form-control" id="modified_by">
-
-                <label for="modified_date">Modified Date</label>
-                <input class="form-control" id="modified_date">
-
-                <label for="box_id">Box ID</label>
-                <input class="form-control" id="box_id">
-
-                <label for="box_row">Box Row</label>
-                <input class="form-control" id="box_row">
-
-                <label for="box_column">Box Column</label>
-                <input class="form-control" id="box_column">
-            </div>
-
-            <div>
-                <button onclick="return search_by_id()" type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
- -->
-
 <!-- source=https://bootsnipp.com/snippets/GXG0R -->
 
     <div class="container-colored-md bg-2-md">
@@ -178,10 +103,10 @@ fieldset.scheduler-border {
                    <div>
                       <input id="visit" class="form-control" name="visit" type="text">
                     </div>
-<!--                    <label for="visit_date">Visit Date</label>  
+                   <label for="visit_date">Visit Date</label>  
                    <div>
-                      <input id="visit_date" class="form-control" name="visit_date" type="text">
-                   </div> -->
+                      <input id="visit_date" class="form-control" name="visit_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+                   </div>
                    <label for="age">Age</label> 
                    <div>
                       <input id="age" class="form-control" name="age" type="text">
