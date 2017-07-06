@@ -154,15 +154,15 @@ fieldset.scheduler-border {
                 <legend class="scheduler-border">Blood Sample Form</legend>
 
                 <div class="form-group">
-                   <label for="patient_id">Patient ID</label>  
-                   <div>
-                      <input id="patient_id" class="form-control" name="patient_id" type="text">
-                   </div>
                    <label for="study">Study</label> 
                    <div>
                       <input id="study" class="form-control" name="study" type="text">
                     </div>
-                   <label for="synd">Synd</label>  
+                   <label for="patient_id">Patient ID</label>  
+                   <div>
+                      <input id="patient_id" class="form-control" name="patient_id" type="text">
+                   </div>
+                   <label for="synd">Syndrome</label>  
                    <div>
                       <input id="synd" class="form-control" name="synd" type="text">
                    </div>
@@ -178,10 +178,10 @@ fieldset.scheduler-border {
                    <div>
                       <input id="visit" class="form-control" name="visit" type="text">
                     </div>
-                   <label for="visit_date">Visit Date</label>  
+<!--                    <label for="visit_date">Visit Date</label>  
                    <div>
                       <input id="visit_date" class="form-control" name="visit_date" type="text">
-                   </div>
+                   </div> -->
                    <label for="age">Age</label> 
                    <div>
                       <input id="age" class="form-control" name="age" type="text">
@@ -194,38 +194,43 @@ fieldset.scheduler-border {
                    <div>
                       <input id="mmse" class="form-control" name="mmse" type="text">
                     </div>
-                   <label for="draw_date">Draw Date</label>  
+<!--                    <label for="draw_date">Draw Date</label>  
                    <div>
                       <input id="draw_date" class="form-control" name="draw_date" type="text">
-                   </div>
-                   <label for="draw_time">Draw Time</label> 
+                   </div> -->
+<!--                    <label for="draw_time">Draw Time</label> 
                    <div>
                       <input id="draw_time" class="form-control" name="draw_time" type="text">
-                    </div>
+                    </div> -->
                    <label for="staff">Staff</label>  
                    <div>
                       <input id="staff" class="form-control" name="staff" type="text">
                    </div>
-                   <label for="frozen_date">Frozen Date</label> 
+<!--                    <label for="frozen_date">Frozen Date</label> 
                    <div>
                       <input id="frozen_date" class="form-control" name="frozen_date" type="text">
-                    </div>
-                   <label for="frozen_time">Frozen Time</label>  
+                    </div> -->
+<!--                    <label for="frozen_time">Frozen Time</label>  
                    <div>
                       <input id="frozen_time" class="form-control" name="frozen_time" type="text">
-                   </div>
+                   </div> -->
                    <label for="created_by">Created By</label> 
                    <div>
                       <input id="created_by" class="form-control" name="created_by" type="text">
                     </div>
-                   <label for="created_date">Created Date</label> 
+<!--                    <label for="created_date">Created Date</label> 
                    <div>
                       <input id="created_date" class="form-control" name="created_date" type="text">
-                    </div>
-                   <label for="modified_date">Modified Date</label>  
+                    </div> -->
+
+                   <label for="modified_by">Modified By</label>  
+                   <div>
+                      <input id="modified_by" class="form-control" name="modified_by" type="textarea">
+                   </div>
+<!--                    <label for="modified_date">Modified Date</label>  
                    <div>
                       <input id="modified_date" class="form-control" name="modified_date" type="textarea">
-                   </div>
+                   </div> -->
                    <label for="comments">Comments</label> 
                    <div>
                       <textarea id="comments" class="form-control" name="comments" rows="4"></textarea>
