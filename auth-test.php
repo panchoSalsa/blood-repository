@@ -11,6 +11,7 @@
 ?>
 <?php
 
+
 	function checkID($id) {
 
 		// load dbconnect config
@@ -39,6 +40,26 @@
 		}
 	}
 
+
+
+
+    // ***********************START**********************************
+
+    // First we check if the user has a valid username and password
+    // by authenticating with UCI Single-On Service.
+
+
+    // To restrict access to certain users we check if the 
+    // user's uci_net_id exists in the MySQL users table && if 
+    // their active bit is on.
+
+    // If it is we allow access to our site
+
+    // Adminstrators can modify the MySQL users table to grant 
+    // access to UCI staff and students.
+
+
+
     // Require this web authentication class file
     require_once 'WebAuth.php';
 
@@ -55,4 +76,6 @@
 		include('access-denied.php');
 		die();
     }
+
+    // ***********************END************************************
 ?>
