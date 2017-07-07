@@ -79,15 +79,15 @@ fieldset.scheduler-border {
                 <legend class="scheduler-border">Blood Sample Form</legend>
 
                 <div class="form-group">
-                   <label for="study">Study</label> 
+<!--                    <label for="study">Study</label> 
                    <div>
                       <input id="study" class="form-control" name="study" type="text">
-                    </div>
+                    </div> -->
                    <label for="patient_id">Patient ID</label>  
                    <div>
                       <input id="patient_id" class="form-control" name="patient_id" type="text">
                    </div>
-                   <label for="synd">Syndrome</label>  
+<!--                    <label for="synd">Syndrome</label>  
                    <div>
                       <input id="synd" class="form-control" name="synd" type="text">
                    </div>
@@ -98,16 +98,16 @@ fieldset.scheduler-border {
                    <label for="dx">DX</label>  
                    <div>
                       <input id="dx" class="form-control" name="dx" type="text">
-                   </div>
+                   </div> -->
                    <label for="visit">Visit</label> 
                    <div>
                       <input id="visit" class="form-control" name="visit" type="text">
                     </div>
-                   <label for="visit_date">Visit Date</label>  
-                   <div>
+                  <label for="visit_date">Visit Date</label>  
+                    <div>
                       <input id="visit_date" class="form-control" name="visit_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
                    </div>
-                   <label for="age">Age</label> 
+<!--                    <label for="age">Age</label> 
                    <div>
                       <input id="age" class="form-control" name="age" type="text">
                     </div>
@@ -118,19 +118,31 @@ fieldset.scheduler-border {
                    <label for="mmse">MMSE</label> 
                    <div>
                       <input id="mmse" class="form-control" name="mmse" type="text">
-                    </div>
-                   <label for="draw_date">Draw Date</label>  
+                    </div> -->
+<!--                    <label for="draw_date">Draw Date</label>  
                    <div>
                       <input id="draw_date" class="form-control" name="draw_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div>
+                   </div> -->
 <!--                    <label for="draw_time">Draw Time</label> 
                    <div>
                       <input id="draw_time" class="form-control" name="draw_time" type="text">
                     </div> -->
-                   <label for="staff">Staff</label>  
+
+
+                    <!-- staff should be the uci_net_id -->
+<!--                    <label for="staff">Staff</label>  
                    <div>
                       <input id="staff" class="form-control" name="staff" type="text">
-                   </div>
+                   </div> -->
+
+                   <label for="freezer_id">Freezer ID</label> 
+                   <div>
+                      <input id="freezer_id" class="form-control" name="freezer_id" type="text">
+                    </div>
+                   <label for="freezer_rack">Freezer Rack</label> 
+                   <div>
+                      <input id="freezer_rack" class="form-control" name="freezer_rack" type="text">
+                    </div>
                    <label for="frozen_date">Frozen Date</label> 
                    <div>
                       <input id="frozen_date" class="form-control" name="frozen_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
@@ -139,7 +151,7 @@ fieldset.scheduler-border {
                    <div>
                       <input id="frozen_time" class="form-control" name="frozen_time" type="text">
                    </div> -->
-                   <label for="created_by">Created By</label> 
+<!--                    <label for="created_by">Created By</label> 
                    <div>
                       <input id="created_by" class="form-control" name="created_by" type="text">
                     </div>
@@ -155,43 +167,57 @@ fieldset.scheduler-border {
                    <label for="modified_date">Modified Date</label>  
                    <div>
                       <input id="modified_date" class="form-control" name="modified_date" type="textarea" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div>
-                   <label for="comments">Comments</label> 
+                   </div> -->
+<!--                    <label for="comments">Comments</label> 
                    <div>
                       <textarea id="comments" class="form-control" name="comments" rows="4"></textarea>
-                    </div>
+                   </div> -->
                 </div>
+                <div class="row">
+                  <div class="col-sm-6">
 
-                <legend>Sample 1</legend>
-                <div class="form-group">
-                   <label for="sample_1_box_id">Box ID</label>  
-                   <div>
-                      <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
-                   </div>
-                   <label for="sample_1_box_row">Box Row</label>  
-                   <div>
-                      <input id="sample_1_box_rowv" class="form-control" name="sample_1_box_row" type="text">
-                   </div>
-                   <label for="sample_1_box_column">Box Column</label>  
-                   <div>
-                      <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text">
-                   </div>
-                </div>
+                  <legend>Sample 1</legend>
+                  <div class="form-group">
+                     <label for="sample_1_box_id">Box ID</label>  
+                     <div>
+                        <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
+                     </div>
+                     <label for="sample_1_box_row">Box Row</label>  
+                     <div>
+                        <input id="sample_1_box_rowv" class="form-control" name="sample_1_box_row" type="text">
+                     </div>
+                     <label for="sample_1_box_column">Box Column</label>  
+                     <div>
+                        <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text">
+                     </div>
+                  </div>
 
-                <legend>Sample 2</legend>
-                <div class="form-group">
-                   <label for="sample_2_box_id">Box ID</label>  
-                   <div>
-                      <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
-                   </div>
-                   <label for="sample_2_box_row">Box Row</label>  
-                   <div>
-                      <input id="sample_2_box_rowv" class="form-control" name="sample_2_box_row" type="text">
-                   </div>
-                   <label for="sample_2_box_column">Box Column</label>  
-                   <div>
-                      <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text">
-                   </div>
+
+                  </div>
+
+
+                  <div class="col-sm-6">
+
+                  <legend>Sample 2</legend>
+                  <div class="form-group">
+                     <label for="sample_2_box_id">Box ID</label>  
+                     <div>
+                        <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
+                     </div>
+                     <label for="sample_2_box_row">Box Row</label>  
+                     <div>
+                        <input id="sample_2_box_rowv" class="form-control" name="sample_2_box_row" type="text">
+                     </div>
+                     <label for="sample_2_box_column">Box Column</label>  
+                     <div>
+                        <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text">
+                     </div>
+                  </div>
+
+
+                  </div>
+
+
                 </div>
 
                 <!-- Button (Double) -->
