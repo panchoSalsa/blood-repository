@@ -17,6 +17,8 @@
         <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <!--         <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 
 
@@ -35,6 +37,8 @@
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 
 
@@ -82,7 +86,8 @@ fieldset.scheduler-border {
 
     <div class="container-colored-md bg-2-md">
        <div class="container">
-          <form action="create-blood-sample.php" method="POST">
+<!--           <form action="create-blood-sample.php" method="POST"> -->
+          <form id="add-blood-sample-form">
              <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Blood Sample Form</legend>
 
@@ -91,14 +96,14 @@ fieldset.scheduler-border {
                   <div class="col-sm-4">
                    <label for="patient_id">Patient ID</label>  
                    <div>
-                      <input id="patient_id" class="form-control" name="patient_id" type="text">
+                      <input id="patient_id" class="form-control" name="patient_id" type="text" value="901">
                    </div>
                   </div>
 
                   <div class="col-sm-4">
                    <label for="visit">Visit</label> 
                    <div>
-                      <input id="visit" class="form-control" name="visit" type="text">
+                      <input id="visit" class="form-control" name="visit" type="text" value ="3">
                     </div>
                   </div>
 
@@ -146,37 +151,45 @@ fieldset.scheduler-border {
                   </div>
                 </div>
 
-
-
-
                 <div class="row">
                   <div class="col-sm-6">
                     <legend>Sample 1</legend>
-                    <div class="form-group">
 
+
+
+                    <div class="form-group">
                        <label for="sample_1_freezer_id">Freezer ID</label> 
                        <div>
-                          <input id="sample_1_freezer_id" class="form-control" name="sample_1_freezer_id" type="text">
+                          <input id="sample_1_freezer_id" class="form-control" name="sample_1_freezer_id" type="text" value="1">
                        </div>
 
                        <label for="sample_1_freezer_rack">Freezer Rack</label> 
                        <div>
-                          <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text">
+                          <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text" value="1">
                        </div>
+                    </div>
 
-                       <label for="sample_1_box_id">Box ID</label>  
+<!--                        <label for="sample_1_box_id">Box ID</label>  
                        <div>
                           <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
-                       </div>
+                       </div> -->
 
+
+                    <div class="form-group">
+                      <label for="sample_1_box_id">Box ID</label>
+                      <select class="form-control" id="sample_1_box_id" name="sample_1_box_id">
+                      </select>
+                    </div>
+
+                    <div class="form-group">
                        <label for="sample_1_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]">
+                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="B">
                        </div>
 
                        <label for="sample_1_box_column">Box Column</label>  
                        <div>
-                          <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2">
+                          <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
                        </div>
                     </div>
                   </div>
@@ -184,30 +197,38 @@ fieldset.scheduler-border {
 
                   <div class="col-sm-6">
                     <legend>Sample 2</legend>
+
                     <div class="form-group">
                        <label for="sample_2_freezer_id">Freezer ID</label> 
                        <div>
-                          <input id="sample_2_freezer_id" class="form-control" name="sample_2_freezer_id" type="text">
+                          <input id="sample_2_freezer_id" class="form-control" name="sample_2_freezer_id" type="text" value="1">
                        </div>
 
                        <label for="sample_2_freezer_rack">Freezer Rack</label> 
                        <div>
-                          <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text">
+                          <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text" value="1">
                        </div>
-
-                       <label for="sample_2_box_id">Box ID</label>  
+                    </div>
+<!--                        <label for="sample_2_box_id">Box ID</label>  
                        <div>
                           <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
-                       </div>
+                       </div> -->
 
+                    <div class="form-group">
+                      <label for="sample_2_box_id">Box ID</label>
+                      <select class="form-control" id="sample_2_box_id" name="sample_2_box_id">
+                      </select>
+                    </div>
+
+                    <div class="form-group">
                        <label for="sample_2_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]">
+                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="C">
                        </div>
 
                        <label for="sample_2_box_column">Box Column</label>  
                        <div>
-                          <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2">
+                          <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
                        </div>
                     </div>
                   </div>
@@ -245,16 +266,48 @@ fieldset.scheduler-border {
                   format: 'MM/DD/YYYY',
                   "defaultDate":new Date()
                 });
-            });
-        </script>
 
-
-        <script type="text/javascript">
-            $(function () {
                 $('#datetimepicker3').datetimepicker({
                     format: 'LT',
                     "defaultDate":new Date()
                 });
+
+                $(".js-example-basic-single").select2();
+
+                $.ajax({
+                     url: "get-boxes.php",
+                     type: "GET",
+                     success: function (response) {
+                          // php returns a JSON string response.
+                          // we need to turn the response into a JSON object
+                         let jsonArray = JSON.parse(response);
+
+                        $("#sample_1_box_id").select2({
+                            data: jsonArray
+                        })
+                        $("#sample_2_box_id").select2({
+                            data: jsonArray
+                        })
+                     }
+                });
+
+
+                $("#add-blood-sample-form").submit(function(e) {
+
+                      var url = "create-blood-sample.php"; // the script where you handle the form input.
+
+                      $.ajax({
+                             type: "POST",
+                             url: url,
+                             data: $("#add-blood-sample-form").serialize(), // serializes the form's elements.
+                             success: function(data) {
+                                // blood sample successfully created show vials
+                                window.location = "search-vials.php?blood_sample_id=" + data;
+                             }
+                           });
+
+                      e.preventDefault(); // avoid to execute the actual submit of the form.
+                  });
             });
         </script>
 

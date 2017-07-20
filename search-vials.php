@@ -43,9 +43,9 @@
                 die("Connection failed: " .$conn->connect_error);
             } 
 
-            $blood_sample_id = 20;
+            $blood_sample_id = filter_input(INPUT_GET, 'blood_sample_id', FILTER_SANITIZE_NUMBER_INT);
 
-            $sql = "select * from vials where blood_sample_id = ". $blood_sample_id;
+            $sql = "select * from vials where blood_sample_id = ". $blood_sample_id . ";";
             $result= $conn->query($sql);
 
             echo "<div style= 'padding-left: 45px'> <h3> Search results for Blood Sample Vials: ". $blood_sample_id ."</h3> </div>";

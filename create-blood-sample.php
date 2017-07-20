@@ -9,9 +9,6 @@
         die("Connection failed: " .$conn->connect_error);
     } 
 
-    // $patientID= $_POST['id'];
-    print_r($_POST);
-
     // MySQL insert from POST
     // source=http://forum.elxis.org/index.php?topic=7618.msg49175#msg49175
 
@@ -47,12 +44,10 @@
     VALUES (". $patient_id . ", " . $visit  . ", '" . $visit_date . "', '"  . $frozen_time . "', '" 
         . $frozen_date . "', " . 8 . ", " . 8 . ");";
 
-    print_r($sql);
+//    print_r($sql);
 
     $blood_sample_id = null;
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-
         // retrive the id of created blood_sample.
         $blood_sample_id = $conn->insert_id;
     } else {
@@ -88,4 +83,7 @@
     create_vials($sample_2_box_id, $blood_sample_id,'plasma', $sample_2_box_row , ($sample_2_box_column + 4), $conn);
 
     $conn -> close();
+
+    // return $blood_sample_id so that we can display the vials created.
+    echo $blood_sample_id;
 ?>
