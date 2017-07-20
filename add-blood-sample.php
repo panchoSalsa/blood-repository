@@ -86,12 +86,6 @@ fieldset.scheduler-border {
              <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Blood Sample Form</legend>
 
-<!--                 <div class="form-group"> -->
-<!--                    <label for="study">Study</label> 
-                   <div>
-                      <input id="study" class="form-control" name="study" type="text">
-                    </div> -->
-
                 <div class="row">
 
                   <div class="col-sm-4">
@@ -119,91 +113,23 @@ fieldset.scheduler-border {
                                     </span>
                                 </div>
                           </div>
-
-<!-- 
-                    <label for="visit_date">Visit Date</label>  
-                    <div>
-                      <input id="visit_date" class="form-control" name="visit_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div> -->
                   </div>
                 </div>
 
 
-<!-- 
-                <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-<!--                    <label for="synd">Syndrome</label>  
-                   <div>
-                      <input id="synd" class="form-control" name="synd" type="text">
-                   </div>
-                   <label for="mci_cat">MCI Cat</label> 
-                   <div>
-                      <input id="mci_cat" class="form-control" name="mci_cat" type="text">
-                    </div>
-                   <label for="dx">DX</label>  
-                   <div>
-                      <input id="dx" class="form-control" name="dx" type="text">
-                   </div> -->
-
-<!--                   <label for="visit_date">Visit Date</label>  
-                    <div>
-                      <input id="visit_date" class="form-control" name="visit_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div> -->
-<!--                    <label for="age">Age</label> 
-                   <div>
-                      <input id="age" class="form-control" name="age" type="text">
-                    </div>
-                   <label for="sex">Sex</label>  
-                   <div>
-                      <input id="sex" class="form-control" name="sex" type="text">
-                   </div>
-                   <label for="mmse">MMSE</label> 
-                   <div>
-                      <input id="mmse" class="form-control" name="mmse" type="text">
-                    </div> -->
-<!--                    <label for="draw_date">Draw Date</label>  
-                   <div>
-                      <input id="draw_date" class="form-control" name="draw_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div> -->
-<!--                    <label for="draw_time">Draw Time</label> 
-                   <div>
-                      <input id="draw_time" class="form-control" name="draw_time" type="text">
-                    </div> -->
-
-
-                    <!-- staff should be the uci_net_id -->
-<!--                    <label for="staff">Staff</label>  
-                   <div>
-                      <input id="staff" class="form-control" name="staff" type="text">
-                   </div> -->
-
 
                 <div class="row">
-                  <div class="col-sm-4">
-                   <label for="freezer_id">Freezer ID</label> 
-                   <div>
-                      <input id="freezer_id" class="form-control" name="freezer_id" type="text">
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4">
-                   <label for="freezer_rack">Freezer Rack</label> 
-                   <div>
-                      <input id="freezer_rack" class="form-control" name="freezer_rack" type="text">
-                    </div>
+<!-- source=https://eonasdan.github.io/bootstrap-datetimepicker/#custom-icons -->
+                  <div class='col-sm-4'>
+                      <label for="datetimepicker3">Frozen Time</label> 
+                      <div class="form-group">
+                          <div class='input-group date' id='datetimepicker3'>
+                              <input type='text' class="form-control" />
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-time"></span>
+                              </span>
+                          </div>
+                      </div>
                   </div>
 
                   <div class="col-sm-4">
@@ -217,75 +143,27 @@ fieldset.scheduler-border {
                                     </span>
                                 </div>
                           </div>
-
-
-
-
-<!--                    <label for="frozen_date">Frozen Date</label> 
-                   <div>
-                      <input id="frozen_date" class="form-control" name="frozen_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                    </div>
-                  </div> -->
-                </div>
-
-<!--                    <label for="freezer_id">Freezer ID</label> 
-                   <div>
-                      <input id="freezer_id" class="form-control" name="freezer_id" type="text">
-                    </div>
-                   <label for="freezer_rack">Freezer Rack</label> 
-                   <div>
-                      <input id="freezer_rack" class="form-control" name="freezer_rack" type="text">
-                    </div>
-                   <label for="frozen_date">Frozen Date</label> 
-                   <div>
-                      <input id="frozen_date" class="form-control" name="frozen_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                    </div> -->
-<!--                    <label for="frozen_time">Frozen Time</label>  
-                   <div>
-                      <input id="frozen_time" class="form-control" name="frozen_time" type="text">
-                   </div> -->
-<!--                    <label for="created_by">Created By</label> 
-                   <div>
-                      <input id="created_by" class="form-control" name="created_by" type="text">
-                    </div>
-                   <label for="created_date">Created Date</label> 
-                   <div>
-                      <input id="created_date" class="form-control" name="created_date" type="text" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                    </div>
-
-                   <label for="modified_by">Modified By</label>  
-                   <div>
-                      <input id="modified_by" class="form-control" name="modified_by" type="textarea">
-                   </div>
-                   <label for="modified_date">Modified Date</label>  
-                   <div>
-                      <input id="modified_date" class="form-control" name="modified_date" type="textarea" placeholder="MM/DD/YYYY" required pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
-                   </div> -->
-<!--                    <label for="comments">Comments</label> 
-                   <div>
-                      <textarea id="comments" class="form-control" name="comments" rows="4"></textarea>
-                   </div> -->
+                  </div>
                 </div>
 
 
-<!-- source=https://eonasdan.github.io/bootstrap-datetimepicker/#custom-icons -->
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker3'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-time"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                 <div class="row">
                   <div class="col-sm-6">
                     <legend>Sample 1</legend>
                     <div class="form-group">
+
+                       <label for="sample_1_freezer_id">Freezer ID</label> 
+                       <div>
+                          <input id="sample_1_freezer_id" class="form-control" name="sample_1_freezer_id" type="text">
+                       </div>
+
+                       <label for="sample_1_freezer_rack">Freezer Rack</label> 
+                       <div>
+                          <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text">
+                       </div>
+
                        <label for="sample_1_box_id">Box ID</label>  
                        <div>
                           <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
@@ -305,6 +183,16 @@ fieldset.scheduler-border {
                   <div class="col-sm-6">
                     <legend>Sample 2</legend>
                     <div class="form-group">
+                       <label for="sample_freezer_id">Freezer ID</label> 
+                       <div>
+                          <input id="sample_freezer_id" class="form-control" name="sample_freezer_id" type="text">
+                       </div>
+
+                       <label for="sample_freezer_rack">Freezer Rack</label> 
+                       <div>
+                          <input id="sample_freezer_rack" class="form-control" name="sample_freezer_rack" type="text">
+                       </div>
+
                        <label for="sample_2_box_id">Box ID</label>  
                        <div>
                           <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
@@ -320,14 +208,6 @@ fieldset.scheduler-border {
                     </div>
                   </div>
                 </div>
-
-                <!-- Button (Double) -->
-<!--                 <div class="row">
-                <div class="form-group">
-                   <div class="col-md-8">
-                      <button type="submit" class="btn btn-success">Submit</button>
-                   </div>
-                </div> -->
 
                 <div class="row">
                   <div class="col-md-8">
@@ -353,11 +233,13 @@ fieldset.scheduler-border {
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker_visit_date').datetimepicker({
-                  format: 'MM/DD/YYYY'
+                  format: 'MM/DD/YYYY',
+                  "defaultDate":new Date()
                 });
 
                 $('#datetimepicker_frozen_date').datetimepicker({
-                  format: 'MM/DD/YYYY'
+                  format: 'MM/DD/YYYY',
+                  "defaultDate":new Date()
                 });
             });
         </script>
@@ -366,7 +248,8 @@ fieldset.scheduler-border {
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
+                    format: 'LT',
+                    "defaultDate":new Date()
                 });
             });
         </script>
