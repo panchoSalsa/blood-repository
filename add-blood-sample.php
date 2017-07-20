@@ -192,6 +192,19 @@ fieldset.scheduler-border {
                           <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
                        </div>
                     </div>
+
+
+                    <div class="form-group">
+                       <label for="sample_1_plasma_count">Plasma Count</label>  
+                       <div>
+                          <input id="sample_1_plasma_count" class="form-control" name="sample_1_plasma_count" type="text" value="4">
+                       </div>
+
+                       <label for="sample_1_serum_count">Serum Count</label> 
+                       <div>
+                          <input id="sample_1_serum_count" class="form-control" name="sample_1_serum_count" type="text" value ="4">
+                       </div>
+                    </div>
                   </div>
 
 
@@ -231,6 +244,19 @@ fieldset.scheduler-border {
                           <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
                        </div>
                     </div>
+
+                    <div class="form-group">
+                       <label for="sample_2_plasma_count">Plasma Count</label>  
+                       <div>
+                          <input id="sample_2_plasma_count" class="form-control" name="sample_2_plasma_count" type="text" value="4">
+                       </div>
+
+                       <label for="sample_2_serum_count">Serum Count</label> 
+                       <div>
+                          <input id="sample_2_serum_count" class="form-control" name="sample_2_serum_count" type="text" value ="4">
+                       </div>
+                    </div>
+
                   </div>
                 </div>
 
