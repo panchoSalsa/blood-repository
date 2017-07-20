@@ -171,7 +171,7 @@ fieldset.scheduler-border {
 
                        <label for="sample_1_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" style="text-transform:uppercase" placeholder="A-H" required pattern="[a-hA-H]">
+                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]">
                        </div>
 
                        <label for="sample_1_box_column">Box Column</label>  
@@ -202,7 +202,7 @@ fieldset.scheduler-border {
 
                        <label for="sample_2_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" style="text-transform:uppercase" placeholder="A-H" required pattern="[a-hA-H]">
+                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]">
                        </div>
 
                        <label for="sample_2_box_column">Box Column</label>  

@@ -32,7 +32,7 @@
 
     <body>
         <?php 
-            include 'auth-test.php';
+            // include 'auth-test.php';
             include 'header.php';
 
             // load dbconnect config
@@ -43,7 +43,7 @@
                 die("Connection failed: " .$conn->connect_error);
             } 
 
-            $blood_sample_id = 1;
+            $blood_sample_id = 20;
 
             $sql = "select * from vials where blood_sample_id = ". $blood_sample_id;
             $result= $conn->query($sql);

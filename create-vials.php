@@ -2,6 +2,8 @@
 
     function create_vials($box_id, $blood_sample_id, $blood_sample_type, $box_row, $box_column, $conn) {
 
+        $box_row = strtoupper($box_row);
+
         $sql = "INSERT INTO vials (box_id, blood_sample_id, blood_sample_type, box_row, box_column) VALUES ";
 
         $values = "";
