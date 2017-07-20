@@ -82,7 +82,7 @@ fieldset.scheduler-border {
 
     <div class="container-colored-md bg-2-md">
        <div class="container">
-          <form action="test.php" method="POST">
+          <form action="create-blood-sample.php" method="POST">
              <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Blood Sample Form</legend>
 
@@ -121,10 +121,10 @@ fieldset.scheduler-border {
                 <div class="row">
 <!-- source=https://eonasdan.github.io/bootstrap-datetimepicker/#custom-icons -->
                   <div class='col-sm-4'>
-                      <label for="datetimepicker3">Frozen Time</label> 
+                      <label for="frozen_time">Frozen Time</label> 
                       <div class="form-group">
                           <div class='input-group date' id='datetimepicker3'>
-                              <input type='text' class="form-control" />
+                              <input type='text' class="form-control" id="frozen_time" name="frozen_time" />
                               <span class="input-group-addon">
                                   <span class="glyphicon glyphicon-time"></span>
                               </span>
