@@ -168,13 +168,15 @@ fieldset.scheduler-border {
                        <div>
                           <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
                        </div>
+
                        <label for="sample_1_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_1_box_rowv" class="form-control" name="sample_1_box_row" type="text" placeholder="A-H" required pattern="[A-H]">
+                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" style="text-transform:uppercase" placeholder="A-H" required pattern="[a-hA-H]">
                        </div>
+
                        <label for="sample_1_box_column">Box Column</label>  
                        <div>
-                          <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" required pattern="[1-9]{2}">
+                          <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2">
                        </div>
                     </div>
                   </div>
@@ -183,27 +185,29 @@ fieldset.scheduler-border {
                   <div class="col-sm-6">
                     <legend>Sample 2</legend>
                     <div class="form-group">
-                       <label for="sample_freezer_id">Freezer ID</label> 
+                       <label for="sample_2_freezer_id">Freezer ID</label> 
                        <div>
-                          <input id="sample_freezer_id" class="form-control" name="sample_freezer_id" type="text">
+                          <input id="sample_2_freezer_id" class="form-control" name="sample_2_freezer_id" type="text">
                        </div>
 
-                       <label for="sample_freezer_rack">Freezer Rack</label> 
+                       <label for="sample_2_freezer_rack">Freezer Rack</label> 
                        <div>
-                          <input id="sample_freezer_rack" class="form-control" name="sample_freezer_rack" type="text">
+                          <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text">
                        </div>
 
                        <label for="sample_2_box_id">Box ID</label>  
                        <div>
                           <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
                        </div>
+
                        <label for="sample_2_box_row">Box Row</label>  
                        <div>
-                          <input id="sample_2_box_rowv" class="form-control" name="sample_2_box_row" type="text" placeholder="A-H" required pattern="[A-H]">
+                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" style="text-transform:uppercase" placeholder="A-H" required pattern="[a-hA-H]">
                        </div>
+
                        <label for="sample_2_box_column">Box Column</label>  
                        <div>
-                          <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" required pattern="[1-9]{2}">
+                          <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2">
                        </div>
                     </div>
                   </div>
