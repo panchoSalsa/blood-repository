@@ -108,17 +108,17 @@ fieldset.scheduler-border {
                   </div>
 
                   <div class="col-sm-4">
-
-                          <label for="visit_date">Visit Date</label>
-                          <div class="form-group">
-                                <div class="input-group date" id="datetimepicker_visit_date">
-                                    <input id="visit_date" class="form-control" name="visit_date" type="text"/>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
+                    <label for="visit_date">Visit Date</label>
+                    <div class="form-group">
+                          <div class="input-group date" id="datetimepicker_visit_date">
+                              <input id="visit_date" class="form-control" name="visit_date" type="text"/>
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
                           </div>
+                    </div>
                   </div>
+
                 </div>
 
 
@@ -155,55 +155,78 @@ fieldset.scheduler-border {
                   <div class="col-sm-6">
                     <legend>Sample 1</legend>
 
+                      <div class="row">
+                        <div class="form-group">
 
+                          <div class="col-sm-6">
+                           <label for="sample_1_freezer_id">Freezer ID</label> 
+                           <div>
+                              <input id="sample_1_freezer_id" class="form-control" name="sample_1_freezer_id" type="text" value="1">
+                           </div>
+                         </div>
 
-                    <div class="form-group">
-                       <label for="sample_1_freezer_id">Freezer ID</label> 
-                       <div>
-                          <input id="sample_1_freezer_id" class="form-control" name="sample_1_freezer_id" type="text" value="1">
-                       </div>
+                          <div class="col-sm-6">
+                           <label for="sample_1_freezer_rack">Freezer Rack</label> 
+                           <div>
+                              <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text" value="1">
+                           </div>
+                         </div>
 
-                       <label for="sample_1_freezer_rack">Freezer Rack</label> 
-                       <div>
-                          <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text" value="1">
-                       </div>
-                    </div>
+                        </div>
+                      </div>
 
-<!--                        <label for="sample_1_box_id">Box ID</label>  
-                       <div>
-                          <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
-                       </div> -->
-
-
-                    <div class="form-group">
+<!--                     <div class="form-group">
                       <label for="sample_1_box_id">Box ID</label>
                       <select class="form-control" id="sample_1_box_id" name="sample_1_box_id">
                       </select>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="form-group">
+
+                        <div class="col-sm-4">
+                         <label for="sample_1_box_id">Box ID</label>  
+                         <div>
+                            <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
+                         </div>
+                       </div>
+
+                        <div class="col-sm-4">
+                         <label for="sample_1_box_row">Box Row</label>  
+                         <div>
+                            <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="B">
+                         </div>
+                       </div>
+
+                        <div class="col-sm-4">
+                         <label for="sample_1_box_column">Box Column</label>  
+                         <div>
+                            <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
+                         </div>
+                       </div>
+
+                      </div>
                     </div>
 
-                    <div class="form-group">
-                       <label for="sample_1_box_row">Box Row</label>  
-                       <div>
-                          <input id="sample_1_box_row" class="form-control" name="sample_1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="B">
+
+                    <div class="row">
+                      <div class="form-group">
+
+                        <div class="col-sm-6">
+                         <label for="sample_1_plasma_count">Plasma Count</label>  
+                         <div>
+                            <input id="sample_1_plasma_count" class="form-control" name="sample_1_plasma_count" type="text" value="4" required pattern="[1-4]">
+                         </div>
                        </div>
 
-                       <label for="sample_1_box_column">Box Column</label>  
-                       <div>
-                          <input id="sample_1_box_column" class="form-control" name="sample_1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
-                       </div>
-                    </div>
-
-
-                    <div class="form-group">
-                       <label for="sample_1_plasma_count">Plasma Count</label>  
-                       <div>
-                          <input id="sample_1_plasma_count" class="form-control" name="sample_1_plasma_count" type="text" value="4">
+                        <div class="col-sm-6">
+                         <label for="sample_1_serum_count">Serum Count</label> 
+                         <div>
+                            <input id="sample_1_serum_count" class="form-control" name="sample_1_serum_count" type="text" value ="4" required pattern="[1-4]">
+                         </div>
                        </div>
 
-                       <label for="sample_1_serum_count">Serum Count</label> 
-                       <div>
-                          <input id="sample_1_serum_count" class="form-control" name="sample_1_serum_count" type="text" value ="4">
-                       </div>
+                      </div>
                     </div>
                   </div>
 
@@ -211,50 +234,77 @@ fieldset.scheduler-border {
                   <div class="col-sm-6">
                     <legend>Sample 2</legend>
 
-                    <div class="form-group">
-                       <label for="sample_2_freezer_id">Freezer ID</label> 
-                       <div>
-                          <input id="sample_2_freezer_id" class="form-control" name="sample_2_freezer_id" type="text" value="1">
-                       </div>
+                      <div class="row">
+                        <div class="form-group">
 
-                       <label for="sample_2_freezer_rack">Freezer Rack</label> 
-                       <div>
-                          <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text" value="1">
-                       </div>
-                    </div>
-<!--                        <label for="sample_2_box_id">Box ID</label>  
-                       <div>
-                          <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
-                       </div> -->
+                          <div class="col-sm-6">
+                           <label for="sample_2_freezer_id">Freezer ID</label> 
+                           <div>
+                              <input id="sample_2_freezer_id" class="form-control" name="sample_2_freezer_id" type="text" value="1">
+                           </div>
+                         </div>
 
-                    <div class="form-group">
+                          <div class="col-sm-6">
+                           <label for="sample_2_freezer_rack">Freezer Rack</label> 
+                           <div>
+                              <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text" value="1">
+                           </div>
+                         </div>
+
+                        </div>
+                      </div>
+
+<!--                     <div class="form-group">
                       <label for="sample_2_box_id">Box ID</label>
                       <select class="form-control" id="sample_2_box_id" name="sample_2_box_id">
                       </select>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="form-group">
+
+                        <div class="col-sm-4">
+                           <label for="sample_2_box_id">Box ID</label>  
+                           <div>
+                              <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
+                           </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                         <label for="sample_2_box_row">Box Row</label>  
+                         <div>
+                            <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="C">
+                         </div>
+                       </div>
+
+                        <div class="col-sm-4">
+                         <label for="sample_2_box_column">Box Column</label>  
+                         <div>
+                            <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
+                         </div>
+                       </div>
+
+                      </div>
                     </div>
 
-                    <div class="form-group">
-                       <label for="sample_2_box_row">Box Row</label>  
-                       <div>
-                          <input id="sample_2_box_row" class="form-control" name="sample_2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="C">
+                    <div class="row">
+                      <div class="form-group">
+
+                        <div class="col-sm-6">
+                         <label for="sample_2_plasma_count">Plasma Count</label>  
+                         <div>
+                            <input id="sample_2_plasma_count" class="form-control" name="sample_2_plasma_count" type="text" value="4" required pattern="[1-4]">
+                         </div>
                        </div>
 
-                       <label for="sample_2_box_column">Box Column</label>  
-                       <div>
-                          <input id="sample_2_box_column" class="form-control" name="sample_2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
-                       </div>
-                    </div>
-
-                    <div class="form-group">
-                       <label for="sample_2_plasma_count">Plasma Count</label>  
-                       <div>
-                          <input id="sample_2_plasma_count" class="form-control" name="sample_2_plasma_count" type="text" value="4">
+                        <div class="col-sm-6">
+                         <label for="sample_2_serum_count">Serum Count</label> 
+                         <div>
+                            <input id="sample_2_serum_count" class="form-control" name="sample_2_serum_count" type="text" value ="4" required pattern="[1-4]">
+                         </div>
                        </div>
 
-                       <label for="sample_2_serum_count">Serum Count</label> 
-                       <div>
-                          <input id="sample_2_serum_count" class="form-control" name="sample_2_serum_count" type="text" value ="4">
-                       </div>
+                      </div>
                     </div>
 
                   </div>
