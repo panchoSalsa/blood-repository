@@ -45,7 +45,7 @@
 
 
         <?php 
-            include 'auth-test.php';
+            // include 'auth-test.php';
             include 'header.php';
         ?>
 
