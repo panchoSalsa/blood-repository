@@ -83,6 +83,10 @@
         <script type="text/javascript">
             $(function() {
                 $('#container-1 > ul').tabs({ fx: { opacity: 'toggle'} });
+                // need to update jquery its very old!!!!
+                $('.list-group').bind('click', function() {
+                    window.location.href = 'http://iba05.brainaging.uci.edu/search-vials.php?blood_sample_id=80'
+                });
             });
         </script>
 
