@@ -43,16 +43,6 @@
     // exit();
     $frozen_date = date("Y/m/d",strtotime($frozen_date));
 
-
-    // $sql = "INSERT INTO blood_samples (study, patient_id, synd, mci_cat, dx, visit, visit_date, age, sex, mmse, draw_date, staff, frozen_date, created_by, created_date, modified_by, modified_date, comments, plasma_count, serum_count) 
-    // VALUES (". $study . ", " . $patient_id . ", '" . $synd  . "', '" . $mci_cat . "', '" . $dx . "', " . $visit  . ", '" . $visit_date . "', " . $age .
-    //     ", '" . $sex . "', " . $mmse  . ", '" . $draw_date . "', '" . $staff . "', '" . $frozen_date . "', '" . $created_by . "', '". $created_date . "', '" . $modified_by . "', '" . $modified_date . "', '". $comments . "', " . 8 . ", " . 8 . ");";
-
-
-    // $sql = "INSERT INTO blood_samples (patient_id, visit, visit_date, frozen_time, frozen_date, plasma_count, serum_count) 
-    // VALUES (". $patient_id . ", " . $visit  . ", '" . $visit_date . "', '"  . $frozen_time . "', '" 
-    //     . $frozen_date . "', " . 8 . ", " . 8 . ");";
-
     $sql = "INSERT INTO blood_samples (patient_id, visit, visit_date, frozen_time, frozen_date, plasma_count, serum_count)
     VALUES (". $patient_id . ", " . $visit  . ", '" . $visit_date . "', '"  . $frozen_time . "', '" 
         . $frozen_date . "', " . $total_plasma . ", " . $total_serum . ");";
@@ -83,18 +73,35 @@
     $sample_1_box_row = filter_input(INPUT_POST, 'sample_1_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $sample_1_box_column = filter_input(INPUT_POST, 'sample_1_box_column', FILTER_SANITIZE_NUMBER_INT);
 
-    create_vials($sample_1_box_id, $blood_sample_id, 'serum', $sample_1_box_row , $sample_1_box_column, $conn);
-    create_vials($sample_1_box_id, $blood_sample_id,'plasma', $sample_1_box_row , ($sample_1_box_column + 4), $conn);
-    //create_vials($sample_1_box_id, $blood_sample_id,'plasma', $sample_1_box_row , ($sample_1_box_column + $sample_1_plasma_count), $conn);
+    for ($i = 0; $i < $sample_1_serum_count; ++$i) {
+            create_vials($sample_1_box_id, $blood_sample_id, 'serum', $sample_1_box_row , $sample_1_box_column, $conn);
+            // $sample_n_box_column keeps track of where to place next blood vial
+            ++$sample_1_box_column;
+    }
+
+    for ($i = 0; $i < $sample_1_plasma_count; ++$i) {
+            create_vials($sample_1_box_id, $blood_sample_id, 'plasma', $sample_1_box_row , $sample_1_box_column, $conn);
+            // $sample_n_box_column keeps track of where to place next blood vial
+            ++$sample_1_box_column;
+    }
+
     // Sample 2
     // adding vials to Sample 2 Box
     $sample_2_box_id = filter_input(INPUT_POST, 'sample_2_box_id', FILTER_SANITIZE_NUMBER_INT);
     $sample_2_box_row = filter_input(INPUT_POST, 'sample_2_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     $sample_2_box_column = filter_input(INPUT_POST, 'sample_2_box_column', FILTER_SANITIZE_NUMBER_INT);
 
-    create_vials($sample_2_box_id, $blood_sample_id,'serum', $sample_2_box_row , $sample_2_box_column, $conn);
-    create_vials($sample_2_box_id, $blood_sample_id,'plasma', $sample_2_box_row , ($sample_2_box_column + 4), $conn);
-    //create_vials($sample_2_box_id, $blood_sample_id,'plasma', $sample_2_box_row , ($sample_2_box_column + $sample_1_serum_count), $conn);
+    for ($i = 0; $i < $sample_2_serum_count; ++$i) {
+            create_vials($sample_2_box_id, $blood_sample_id, 'serum', $sample_2_box_row , $sample_2_box_column, $conn);
+            // $sample_n_box_column keeps track of where to place next blood vial
+            ++$sample_2_box_column;
+    }
+
+        for ($i = 0; $i < $sample_2_plasma_count; ++$i) {
+            create_vials($sample_2_box_id, $blood_sample_id, 'plasma', $sample_2_box_row , $sample_2_box_column, $conn);
+            // $sample_n_box_column keeps track of where to place next blood vial
+            ++$sample_2_box_column;
+    }
 
     $conn -> close();
 

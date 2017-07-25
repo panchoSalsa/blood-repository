@@ -78,7 +78,7 @@ fieldset.scheduler-border {
 
     <body>
         <?php 
-            // include 'auth-test.php';
+            include 'auth-test.php';
             include 'header.php';
         ?>
 
@@ -187,7 +187,7 @@ fieldset.scheduler-border {
                         <div class="col-sm-4">
                          <label for="sample_1_box_id">Box ID</label>  
                          <div>
-                            <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text">
+                            <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text" value="3">
                          </div>
                        </div>
 
@@ -266,7 +266,7 @@ fieldset.scheduler-border {
                         <div class="col-sm-4">
                            <label for="sample_2_box_id">Box ID</label>  
                            <div>
-                              <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text">
+                              <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text" value="3">
                            </div>
                         </div>
 
