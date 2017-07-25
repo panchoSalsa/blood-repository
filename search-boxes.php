@@ -43,7 +43,7 @@
                 die("Connection failed: " .$conn->connect_error);
             } 
 
-            $box_id = 4;
+            $box_id = 3;
 
             $sql = "select * from vials where box_id = ". $box_id;
             $result= $conn->query($sql);

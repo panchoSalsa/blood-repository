@@ -213,16 +213,16 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-6">
-                         <label for="sample_1_plasma_count">Plasma Count</label>  
+                         <label for="sample_1_serum_count">Serum Count</label> 
                          <div>
-                            <input id="sample_1_plasma_count" class="form-control" name="sample_1_plasma_count" type="text" value="4" required pattern="[1-4]">
+                            <input id="sample_1_serum_count" class="form-control" name="sample_1_serum_count" type="text" value ="4" required pattern="[1-4]">
                          </div>
                        </div>
 
                         <div class="col-sm-6">
-                         <label for="sample_1_serum_count">Serum Count</label> 
+                         <label for="sample_1_plasma_count">Plasma Count</label>  
                          <div>
-                            <input id="sample_1_serum_count" class="form-control" name="sample_1_serum_count" type="text" value ="4" required pattern="[1-4]">
+                            <input id="sample_1_plasma_count" class="form-control" name="sample_1_plasma_count" type="text" value="4" required pattern="[1-4]">
                          </div>
                        </div>
 
@@ -291,16 +291,16 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-6">
-                         <label for="sample_2_plasma_count">Plasma Count</label>  
+                         <label for="sample_2_serum_count">Serum Count</label> 
                          <div>
-                            <input id="sample_2_plasma_count" class="form-control" name="sample_2_plasma_count" type="text" value="4" required pattern="[1-4]">
+                            <input id="sample_2_serum_count" class="form-control" name="sample_2_serum_count" type="text" value ="4" required pattern="[1-4]">
                          </div>
                        </div>
 
                         <div class="col-sm-6">
-                         <label for="sample_2_serum_count">Serum Count</label> 
+                         <label for="sample_2_plasma_count">Plasma Count</label>  
                          <div>
-                            <input id="sample_2_serum_count" class="form-control" name="sample_2_serum_count" type="text" value ="4" required pattern="[1-4]">
+                            <input id="sample_2_plasma_count" class="form-control" name="sample_2_plasma_count" type="text" value="4" required pattern="[1-4]">
                          </div>
                        </div>
 
