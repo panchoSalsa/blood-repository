@@ -23,7 +23,8 @@
          <li><a href="index.php">Home</a></li>
          <li><a href="search-by-patient-id.php">Search By Patient ID</a></li>
          <li><a href="add-blood-sample.php">Add Blood Sample</a></li>
-         <li><a href="index.php">Browse</a></li>
+         <li><a href="search-vials-by-blood-sample-id.php">Search Vials By Blood Sample ID</a></li>
+<!--          <li><a href="index.php">Browse</a></li> -->
          <li><a id="logout" style="cursor: pointer;">Logout</a></li>
         </ul>
 <!--         <button id="logout" type="button">Log Out</button> -->

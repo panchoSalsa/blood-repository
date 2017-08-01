@@ -3,12 +3,6 @@
 	text-align: center;
 }
 
-.row{
-/*	max-width: 800px;*/
-	padding-left: 25px !important;
-	padding-right: 25px !important;
-}
-
 .highlight {
 	background-color:"#8ab1db";
 }

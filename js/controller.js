@@ -111,11 +111,35 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             });
         
         } else {
-           
             $scope.blood_samples = [];
-        
         }
     }
+}]);      
 
 
-}]);        
+
+app.controller('SearchByBloodSampleID', ['$scope', '$window', '$location', '$http', 'MyFactory', 
+    function($scope, $window, $location, $http, MyFactory) {
+
+    $scope.id = "";
+    $scope.vials = [];
+
+    $scope.search_vials_by_blood_sample = function(id) {
+            if ($scope.id !== "") {
+ 
+                var request_body = {'id' : id};
+                console.log('search for id: ' + id);
+                
+                MyFactory.search_vials_by_blood_sample_id(request_body)
+                    .then(function(res) {
+                        console.log(res);
+                        $scope.vials = res.data;
+                });
+            
+            } else {
+                $(function() {
+                    $scope.vials = [];
+                });
+            }
+    }
+}]);   

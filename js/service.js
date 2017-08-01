@@ -45,6 +45,10 @@ angular.module('BloodRepositoryApp')
 		search_by_id: function(request_body) {
 			// return $http.post('../search-backend.php', request_body);
 			return $http.post('../search/blood-samples-by-patient-id.php', request_body);
-		}
+		},
+
+		search_vials_by_blood_sample_id: function(request_body) {
+			return $http.post('../search/vials.php', request_body);
+		},
 	};
 }]);
