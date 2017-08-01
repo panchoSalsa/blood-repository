@@ -24,7 +24,7 @@
          <li><a href="id-search.php">Search By ID</a></li>
          <li><a href="add-blood-sample.php">Add/Remove Samples</a></li>
          <li><a href="index.php">Browse</a></li>
-         <li><a id="logout" style="cursor: pointer;">Logout</a></li>
+         <li><a href="https://login.uci.edu/ucinetid/webauth_logout">Logout</a></li>
         </ul>
 <!--         <button id="logout" type="button">Log Out</button> -->
       </div>

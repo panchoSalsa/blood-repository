@@ -26,7 +26,7 @@
 
   <body ng-controller="SearchByPatientID">
         <?php 
-            //include 'auth-test.php';
+            //include '../auth-test.php';
             include 'header.php';
         ?>
 
@@ -61,6 +61,8 @@
             <li class="list-group-item col-xs-6"><b>Plasma Count: </b> {{blood_sample.plasma_count}} </li>
         </ul>
 
+
+        <script src="../js/header.js" type="text/javascript"></script>
   </body>
 
 </html>

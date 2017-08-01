@@ -25,7 +25,8 @@
          <li><a href="add-blood-sample.php">Add Blood Sample</a></li>
          <li><a href="search-vials-by-blood-sample-id.php">Search Vials By Blood Sample ID</a></li>
 <!--          <li><a href="index.php">Browse</a></li> -->
-         <li><a id="logout" style="cursor: pointer;">Logout</a></li>
+<!--          <li><a id="logout" style="cursor: pointer;">Logout</a></li> -->
+        <li><a href="https://login.uci.edu/ucinetid/webauth_logout">Logout</a></li>
         </ul>
 <!--         <button id="logout" type="button">Log Out</button> -->
       </div>

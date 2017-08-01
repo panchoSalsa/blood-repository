@@ -26,7 +26,7 @@
 
   <body ng-controller="SearchByBloodSampleID">
         <?php 
-            //include 'auth-test.php';
+            //include '../auth-test.php';
             include 'header.php';
         ?>
 
@@ -70,6 +70,7 @@
             </div>
         </div>
 
+        <script src="../js/header.js" type="text/javascript"></script>
 </body>
 
 </html>
