@@ -13,6 +13,8 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -46,7 +48,9 @@
 
                         <h1>Serum Samples</h1>
                         <ul class="list-group row" ng-repeat="vial in vials  | filter: { blood_sample_type: 'serum' }">
-                            <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5></li>
+                            <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5>
+                                <i class="fa fa-ban fa-3" aria-hidden="true" ng-click="delete_vial(vial.id)"></i>
+                            </li>
                             <li class="list-group-item"><b>Blood Sample ID: </b> {{vial.blood_sample_id}} </li>
                             <li class="list-group-item"><b>Box ID: </b> {{vial.box_id}} </li>
                             <li class="list-group-item"><b>Box Row: </b> {{vial.box_row}} </li>
@@ -58,7 +62,9 @@
                 <div class="col-md-6">
                         <h1>Plasma Samples</h1>
                         <ul class="list-group row" ng-repeat="vial in vials | filter: { blood_sample_type: 'plasma' }">
-                            <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5></li>
+                            <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5>
+                                <i class="fa fa-ban fa-3" aria-hidden="true" ng-click="delete_vial(vial.id)"></i>
+                            </li>
                             <li class="list-group-item"><b>Blood Sample ID: </b> {{vial.blood_sample_id}} </li>
                             <li class="list-group-item"><b>Box ID: </b> {{vial.box_id}} </li>
                             <li class="list-group-item"><b>Box Row: </b> {{vial.box_row}} </li>

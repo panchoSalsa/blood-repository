@@ -1,8 +1,15 @@
 angular.module('BloodRepositoryApp')
 .factory('MyFactory', ['$http', '$window', function($http, $window) {
 	return {
+
+		delete_vial : function(request_body) {
+			return $http.post('../destroy/vial.php', request_body);
+		},
+
 		redirect : function(relative_path) {
 			//$window.location.href = relative_path;
+
+			// open new browser tab
 			$window.open(relative_path, "_blank");
 		},
 		

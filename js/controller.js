@@ -72,4 +72,23 @@ app.controller('SearchByBloodSampleID', ['$scope', '$window', '$location', '$htt
     } else {
         $scope.id = "";
     }
+
+
+
+
+    $scope.delete_vial = function(id) {
+        
+        var request_body = {'id' : id};
+
+        console.log(request_body);
+
+        MyFactory.delete_vial(request_body)
+            .then(function(res) {
+                console.log(res);
+
+                if (!res.data.error) {
+                    $scope.search_vials_by_blood_sample($scope.id);
+                }
+        });
+    }
 }]);   
