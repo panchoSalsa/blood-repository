@@ -48,16 +48,16 @@ class WebAuth
         }
 
         // Next, we'll grab some key global variables
-        $cookie_vars_array = $GLOBALS[_COOKIE];
-        $get_vars_array = $GLOBALS[_GET];
-        $server_vars_array = $GLOBALS[_SERVER];
+        $cookie_vars_array = $GLOBALS["_COOKIE"];
+        $get_vars_array = $GLOBALS["_GET"];
+        $server_vars_array = $GLOBALS["_SERVER"];
 
         // Let's get the client's ip address
-        $this->remote_addr = $server_vars_array[REMOTE_ADDR];
+        $this->remote_addr = $server_vars_array["REMOTE_ADDR"];
 
         // Time to construct the client's URL
         // Check the server port first
-        switch ($server_vars_array[SERVER_PORT]) {
+        switch ($server_vars_array["SERVER_PORT"]) {
             case "443":
                 $prefix = "https://";
                 break;
@@ -67,10 +67,10 @@ class WebAuth
         }
 
         // Now, we'll add the HTTP_HOST name
-        $this->url = $prefix . $server_vars_array[HTTP_HOST];
+        $this->url = $prefix . $server_vars_array["HTTP_HOST"];
 
         // Let's add the script name
-        $this->url .= $server_vars_array[SCRIPT_NAME];
+        $this->url .= $server_vars_array["SCRIPT_NAME"];
 
         // Reconstruct the GET variables
         if (is_array($get_vars_array) && sizeof($get_vars_array) > 0) {
@@ -91,8 +91,8 @@ class WebAuth
         $this->logout_url .= '?return_url=' . urlencode($this->url);
 
         // Let's add the cookie called 'ucinetid_auth'
-        if ($cookie_vars_array[ucinetid_auth]) {
-            $this->cookie = $cookie_vars_array[ucinetid_auth];
+        if ($cookie_vars_array["ucinetid_auth"]) {
+            $this->cookie = $cookie_vars_array["ucinetid_auth"];
             $this->check_url .= '?ucinetid_auth=' . $this->cookie;
         }
 

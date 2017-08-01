@@ -71,7 +71,6 @@
     if (!$auth_object->isLoggedIn()) {
         Header('Location: ' . $auth_object->login_url);
     } else if (! checkID($auth_object->ucinetid)) {
-    	checkID($auth_object->ucinetid);
     	http_response_code(404);
 		include('access-denied.php');
 		die();
