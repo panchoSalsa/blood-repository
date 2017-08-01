@@ -21,8 +21,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <ul class="nav navbar-nav">
          <li><a href="index.php">Home</a></li>
-         <li><a href="id-search.php">Search By ID</a></li>
-         <li><a href="add-blood-sample.php">Add/Remove Samples</a></li>
+         <li><a href="search-by-patient-id.php">Search By Patient ID</a></li>
+         <li><a href="add-blood-sample.php">Add Blood Sample</a></li>
          <li><a href="index.php">Browse</a></li>
          <li><a id="logout" style="cursor: pointer;">Logout</a></li>
         </ul>
