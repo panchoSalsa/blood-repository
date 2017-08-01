@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>AngularJS Plunker</title>
+    <title>Vials</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/ui.tabs.css" type="text/css" media="print, projection, screen"/>
@@ -39,27 +39,25 @@
             </div>
         </form>
 
-<!--         <h1> {{vials.length}}</h1> -->
 
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
 
                         <h1>Serum Samples</h1>
-                        <ul class="list-group row" ng-repeat="vial in vials  | filter: { blood_sample_type: 'serum' }" ng-click="func(vial.id)">
+                        <ul class="list-group row" ng-repeat="vial in vials  | filter: { blood_sample_type: 'serum' }">
                             <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5></li>
                             <li class="list-group-item"><b>Blood Sample ID: </b> {{vial.blood_sample_id}} </li>
                             <li class="list-group-item"><b>Box ID: </b> {{vial.box_id}} </li>
                             <li class="list-group-item"><b>Box Row: </b> {{vial.box_row}} </li>
                             <li class="list-group-item"><b>Box Column: </b> {{vial.box_column}} </li>
-<!--                             <li class="list-group-item"><b>Blood Sample Type: </b> {{vial.blood_sample_type}} </li> -->
                         </ul>
                 </div>
 
 
                 <div class="col-md-6">
                         <h1>Plasma Samples</h1>
-                        <ul class="list-group row" ng-repeat="vial in vials | filter: { blood_sample_type: 'plasma' }" ng-click="func(vial.id)">
+                        <ul class="list-group row" ng-repeat="vial in vials | filter: { blood_sample_type: 'plasma' }">
                             <li class="list-group-item" style= "background-color:#8ab1db;"><h5> <b> Vial ID:</b> {{vial.id}} </h5></li>
                             <li class="list-group-item"><b>Blood Sample ID: </b> {{vial.blood_sample_id}} </li>
                             <li class="list-group-item"><b>Box ID: </b> {{vial.box_id}} </li>
@@ -69,8 +67,7 @@
                 </div>
             </div>
         </div>
-
-        <script src="../js/header.js" type="text/javascript"></script>
+        
 </body>
 
 </html>
