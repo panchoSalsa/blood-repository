@@ -379,11 +379,10 @@ fieldset.scheduler-border {
                                 // blood sample successfully created show vials
                                 
 
-                                console.log('creation successful');
-                                console.log(data);
+                                alert('Blood Sample Created');
 
                                 // window.location = "../search/vials.php?blood_sample_id=" + data;
-                                window.location = "../views/vials.php?blood_sample_id=" + data;
+                                //window.location = "../views/vials.php?blood_sample_id=" + data;
                              }
                            });
 

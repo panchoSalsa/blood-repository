@@ -114,6 +114,12 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             $scope.blood_samples = [];
         }
     }
+
+
+    $scope.func = function(id) {
+            console.log('clicking on id ' + id);
+            MyFactory.redirect('../views/display-vials.php?blood_sample_id='+ id);
+    }
 }]);      
 
 
