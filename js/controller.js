@@ -117,8 +117,7 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
 
 
     $scope.func = function(id) {
-            console.log('clicking on id ' + id);
-            MyFactory.redirect('../views/display-vials.php?blood_sample_id='+ id);
+            MyFactory.redirect('../views/search-vials-by-blood-sample-id.php?blood_sample_id='+ id);
     }
 }]);      
 
@@ -127,7 +126,11 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
 app.controller('SearchByBloodSampleID', ['$scope', '$window', '$location', '$http', 'MyFactory', 
     function($scope, $window, $location, $http, MyFactory) {
 
-    $scope.id = "";
+    // to read from url params
+    // 1) add access file, source=https://www.digitalocean.com/community/tutorials/how-to-use-the-htaccess-file
+    // 2) config app, source=https://stackoverflow.com/questions/36573129/access-url-parameters-in-angularjs-in-the-controller
+
+    $scope.id = $location.search().blood_sample_id;
     $scope.vials = [];
 
     $scope.search_vials_by_blood_sample = function(id) {
@@ -148,4 +151,6 @@ app.controller('SearchByBloodSampleID', ['$scope', '$window', '$location', '$htt
                 });
             }
     }
+
+    $scope.search_vials_by_blood_sample($scope.id);
 }]);   
