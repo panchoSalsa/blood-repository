@@ -41,8 +41,6 @@
 	}
 
 
-
-
     // ***********************START**********************************
 
     // First we check if the user has a valid username and password
