@@ -1,6 +1,6 @@
 // views/search-
-app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 'MyFactory', 
-    function($scope, $window, $location, $http, MyFactory) {
+app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 'MyFactory', 'Query', 
+    function($scope, $window, $location, $http, MyFactory, Query) {
 
     $scope.id = "";
     $scope.blood_samples = [];
@@ -14,7 +14,7 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             MyFactory.search_blood_samples_by_patient_id(request_body)
                 .then(function(res) {
                     console.log(res);
-                    $scope.blood_samples = res.data;
+                    $scope.blood_samples = res;
             });
         
         } else {
@@ -25,6 +25,57 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
     $scope.redirect_to_vials = function(id) {
             MyFactory.redirect('../views/search-vials-by-blood-sample-id.php?blood_sample_id='+ id);
     }
+
+
+
+    $scope.queryDatabase = function(query_object) {
+        Query.post_query(query_object) {
+                .then(function(res) {
+                console.log(res);
+                $scope.blood_samples = res.data;
+                // $scope.rows = data;
+                // $scope.formData = {};
+            });
+    };
+
+
+    // fetch records as rule values get updated in front-end
+    $('#builder').on('afterUpdateRuleValue.queryBuilder', function(e, rule) {
+        // only hit API if rule value is not empty
+        if (rule.value) {
+            DisplayRecords();
+        }
+    });
+
+    // $('#builder').on('afterDeleteRule.queryBuilder', function(e, rule) {
+
+    //     if ($('#builder').queryBuilder('validate')) {
+    //         DisplayRecords();
+    //     } else {
+    //         // must call $apply in order to display 0 rows in the view
+    //         // if $apply is not used, then the view will not be updated
+    //         $scope.$apply(function() {
+    //             $scope.rows = [];
+    //         });
+    //     }
+    // });
+
+    function DisplayRecords() {
+            var result = $('#builder').queryBuilder('getSQL');
+            // must set formData before calling $scope.queryDatabase() because 
+            // a post request is sent using formData as the parameter
+            // $scope.formData.query = result.sql;
+            var query_object = {'query': result.sql};
+            $scope.queryDatabase(query_object);
+            //console.log(result);
+    }
+
+
+
+
+
+
+
 }]);      
 
 

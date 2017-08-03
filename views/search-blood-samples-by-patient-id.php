@@ -13,10 +13,15 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
+    <link rel="stylesheet" href="../js/jQuery-QueryBuilder-2.4.1/dist/css/query-builder.default.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/jquery.query-builder/2.4.1/js/query-builder.standalone.min.js"> </script>
+    <script src="../js/sql-parser.js"></script>
 
     <script src="../js/app.js"></script>
     <script src="../js/controller.js"></script>
@@ -30,6 +35,7 @@
             include 'header.php';
         ?>
 
+        <div id="builder"></div>
 
         <form align= "center" ng-submit="search_blood_samples_by_patient_id(id)">
             <div class="form-group">
@@ -61,6 +67,8 @@
             <li class="list-group-item col-xs-6"><b>Plasma Count: </b> {{blood_sample.plasma_count}} </li>
         </ul>
 
+
+    <script src="../js/jQueryBuilderLogic.js"></script>
   </body>
 
 </html>
