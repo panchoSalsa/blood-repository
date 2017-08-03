@@ -60,7 +60,7 @@ $('#builder').queryBuilder({
     id: 'age',
     label: 'age',
     type: 'integer',
-    operators: ['equal', 'not_equal', 'contains'],
+    operators: ['equal', 'not_equal', 'contains', 'greater', 'less'],
     validation: {
       min: 0
     }
@@ -69,7 +69,12 @@ $('#builder').queryBuilder({
     id: 'sex',
     label: 'sex',
     type: 'string',
-    operators: ['equal', 'not_equal', 'contains']
+    input: 'select',
+    values: {
+      'male': 'male',
+      'female': 'female'
+    },
+    operators: ['equal', 'not_equal']
   },
   {
     id: 'mmse',

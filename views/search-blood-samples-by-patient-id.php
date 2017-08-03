@@ -37,13 +37,13 @@
 
         <div id="builder"></div>
 
-        <form align= "center" ng-submit="search_blood_samples_by_patient_id(id)">
+<!--         <form align= "center" ng-submit="search_blood_samples_by_patient_id(id)">
             <div class="form-group">
                 <label for="id">Patient ID</label>
                 <input type="patientID" class="form-control" id="id" name="id" placeholder="901" ng-model="id">
                 <small class="form-text text-muted">Enter the patient ID of the sample you want to look up.</small>
             </div>
-        </form>
+        </form> -->
 
 
         <ul class="list-group row" ng-repeat="blood_sample in blood_samples" ng-click="redirect_to_vials(blood_sample.id)">
