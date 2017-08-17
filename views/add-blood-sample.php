@@ -165,14 +165,6 @@ fieldset.scheduler-border {
                            </div>
                          </div>
 
-
-<!--                         <select>
-                          <option value="volvo">Volvo</option>
-                          <option value="saab">Saab</option>
-                          <option value="mercedes">Mercedes</option>
-                          <option value="audi">Audi</option>
-                        </select> -->
-
                           <div class="col-sm-6">
                            <label for="sample_1_freezer_rack">Freezer Rack</label> 
                            <div>
@@ -184,19 +176,12 @@ fieldset.scheduler-border {
                         </div>
                       </div>
 
-<!--                     <div class="form-group">
-                      <label for="sample_1_box_id">Box ID</label>
-                      <select class="form-control" id="sample_1_box_id" name="sample_1_box_id">
-                      </select>
-                    </div> -->
-
                     <div class="row">
                       <div class="form-group">
 
                         <div class="col-sm-4">
                          <label for="sample_1_box_id">Box ID</label>  
                          <div>
-                            <!-- <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text" value="3"> -->
                             <select id="sample_1_box_id"  class="form-control" name="sample_1_box_id" type="text">
                             </select>
                          </div>
@@ -267,11 +252,6 @@ fieldset.scheduler-border {
                         </div>
                       </div>
 
-<!--                     <div class="form-group">
-                      <label for="sample_2_box_id">Box ID</label>
-                      <select class="form-control" id="sample_2_box_id" name="sample_2_box_id">
-                      </select>
-                    </div> -->
 
                     <div class="row">
                       <div class="form-group">
@@ -279,7 +259,8 @@ fieldset.scheduler-border {
                         <div class="col-sm-4">
                            <label for="sample_2_box_id">Box ID</label>  
                            <div>
-                              <input id="sample_2_box_id" class="form-control" name="sample_2_box_id" type="text" value="3">
+                              <select id="sample_2_box_id"  class="form-control" name="sample_2_box_id" type="text">
+                            </select>
                            </div>
                         </div>
 
@@ -437,35 +418,6 @@ fieldset.scheduler-border {
                       $('#sample_2_freezer_rack').append(listitems);
 
                       $('#sample_2_freezer_rack').prop("selectedIndex", -1);
-                     }
-                  });
-                });
-
-
-                $('#sample_1_freezer_id').on('change', function() {
-
-                  // clear freezer_rack options
-                  $('#sample_1_freezer_rack').empty();
-
-                  var data = {fid: parseInt(this.value)};
-
-                  $.ajax({
-                     url: "../search/get-racks.php",
-                     type: "POST",
-                     data: data,
-                     success: function (response) {
-                      // php returns a JSON string response.
-                      // we need to turn the response into a JSON object
-                      let jsonArray = JSON.parse(response);
-
-                      var listitems = '';
-                      for (i = 0; i < jsonArray.length; ++i) {
-                         listitems += '<option value=' + jsonArray[i].id + '>' + jsonArray[i].title  + '</option>';
-                      }
-
-                      // populate select inputs for freezer available
-                      $('#sample_1_freezer_rack').append(listitems);
-                      $('#sample_1_freezer_rack').prop("selectedIndex", -1);
                      }
                   });
                 });
