@@ -176,22 +176,8 @@ fieldset.scheduler-border {
                           <div class="col-sm-6">
                            <label for="sample_1_freezer_rack">Freezer Rack</label> 
                            <div>
-                              <!-- <input id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text" value="1"> -->
-                          
                               <select id="sample_1_freezer_rack" class="form-control" name="sample_1_freezer_rack" type="text">
-<!--                                 <option value="1">Rack 1</option>
-                                <option value="2">Rack 2</option>
-                                <option value="3">Rack 3</option>
-                                <option value="4">Rack 4</option>
-                                <option value="5">Rack 5</option>
-                                <option value="6">Rack 6</option>
-                                <option value="7">Rack 7</option>
-                                <option value="8">Rack 8</option>
-                                <option value="9">Rack 9</option> -->
                               </select>
-
-
-
                            </div>
                          </div>
 
@@ -212,19 +198,6 @@ fieldset.scheduler-border {
                          <div>
                             <!-- <input id="sample_1_box_id" class="form-control" name="sample_1_box_id" type="text" value="3"> -->
                             <select id="sample_1_box_id"  class="form-control" name="sample_1_box_id" type="text">
-<!--                                 <option value="1">Box 1</option>
-                                <option value="2">Box 2</option>
-                                <option value="3">Box 3</option>
-                                <option value="4">Box 4</option>
-                                <option value="5">Box 5</option>
-                                <option value="6">Box 6</option>
-                                <option value="7">Box 7</option>
-                                <option value="8">Box 8</option>
-                                <option value="9">Box 9</option>
-                                <option value="10">Box 10</option>
-                                <option value="11">Box 11</option>
-                                <option value="12">Box 12</option>
-                                <option value="13">Box 13</option> -->
                             </select>
                          </div>
                        </div>
@@ -286,7 +259,8 @@ fieldset.scheduler-border {
                           <div class="col-sm-6">
                            <label for="sample_2_freezer_rack">Freezer Rack</label> 
                            <div>
-                              <input id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text" value="1">
+                              <select id="sample_2_freezer_rack" class="form-control" name="sample_2_freezer_rack" type="text">
+                              </select>
                            </div>
                          </div>
 
@@ -403,8 +377,97 @@ fieldset.scheduler-border {
 
                       // populate select inputs for freezer available
                       $('#sample_1_freezer_id').append(listitems);
+                      $('#sample_1_freezer_id').prop("selectedIndex", -1);
                       $('#sample_2_freezer_id').append(listitems);
+                      $('#sample_2_freezer_id').prop("selectedIndex", -1);
                      }
+                });
+
+
+                $('#sample_1_freezer_id').on('change', function() {
+
+                  // clear freezer_rack options
+                  $('#sample_1_freezer_rack').empty();
+
+                  var data = {fid: parseInt(this.value)};
+
+                  $.ajax({
+                     url: "../search/get-racks.php",
+                     type: "POST",
+                     data: data,
+                     success: function (response) {
+                      // php returns a JSON string response.
+                      // we need to turn the response into a JSON object
+                      let jsonArray = JSON.parse(response);
+
+                      var listitems = '';
+                      for (i = 0; i < jsonArray.length; ++i) {
+                         listitems += '<option value=' + jsonArray[i].id + '>' + jsonArray[i].title  + '</option>';
+                      }
+
+                      // populate select inputs for freezer available
+                      $('#sample_1_freezer_rack').append(listitems);
+                      $('#sample_1_freezer_rack').prop("selectedIndex", -1);
+                     }
+                  });
+                });
+
+                $('#sample_2_freezer_id').on('change', function() {
+
+                  // clear freezer_rack options
+                  $('#sample_2_freezer_rack').empty();
+
+                  var data = {fid: parseInt(this.value)};
+
+                  $.ajax({
+                     url: "../search/get-racks.php",
+                     type: "POST",
+                     data: data,
+                     success: function (response) {
+                      // php returns a JSON string response.
+                      // we need to turn the response into a JSON object
+                      let jsonArray = JSON.parse(response);
+
+                      var listitems = '';
+                      for (i = 0; i < jsonArray.length; ++i) {
+                         listitems += '<option value=' + jsonArray[i].id + '>' + jsonArray[i].title  + '</option>';
+                      }
+
+                      // populate select inputs for freezer available
+                      $('#sample_2_freezer_rack').append(listitems);
+
+                      $('#sample_2_freezer_rack').prop("selectedIndex", -1);
+                     }
+                  });
+                });
+
+
+                $('#sample_1_freezer_id').on('change', function() {
+
+                  // clear freezer_rack options
+                  $('#sample_1_freezer_rack').empty();
+
+                  var data = {fid: parseInt(this.value)};
+
+                  $.ajax({
+                     url: "../search/get-racks.php",
+                     type: "POST",
+                     data: data,
+                     success: function (response) {
+                      // php returns a JSON string response.
+                      // we need to turn the response into a JSON object
+                      let jsonArray = JSON.parse(response);
+
+                      var listitems = '';
+                      for (i = 0; i < jsonArray.length; ++i) {
+                         listitems += '<option value=' + jsonArray[i].id + '>' + jsonArray[i].title  + '</option>';
+                      }
+
+                      // populate select inputs for freezer available
+                      $('#sample_1_freezer_rack').append(listitems);
+                      $('#sample_1_freezer_rack').prop("selectedIndex", -1);
+                     }
+                  });
                 });
 
 
