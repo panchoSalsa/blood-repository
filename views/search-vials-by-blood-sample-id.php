@@ -28,7 +28,7 @@
 
   <body ng-controller="SearchByBloodSampleID">
         <?php 
-            //include '../auth-test.php';
+            include '../authentication/check-authentication.php';
             include 'header.php';
         ?>
 

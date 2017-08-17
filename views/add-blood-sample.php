@@ -78,7 +78,7 @@ fieldset.scheduler-border {
 
     <body>
         <?php 
-            //include '../auth-test.php';
+            include '../authentication/check-authentication.php';
             include 'header.php';
         ?>
 
