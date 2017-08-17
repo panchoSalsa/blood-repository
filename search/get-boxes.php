@@ -7,14 +7,14 @@
     include '../../db-connection/dbconfig.php';
 
 
-    $fid = filter_input(INPUT_POST, 'fid', FILTER_SANITIZE_NUMBER_INT);
+    $rid = filter_input(INPUT_POST, 'rid', FILTER_SANITIZE_NUMBER_INT);
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn -> connect_error) {
         die("Connection failed: " .$conn->connect_error);
     } 
 
-    $sql = "select id, title from racks where fid = ". $fid;
+    $sql = "select id, title from boxes where rid = ". $rid;
     $result= $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -24,5 +24,5 @@
         echo (json_encode($myArray, JSON_PRETTY_PRINT));
     }
     $conn -> close();
-    
+  
 ?>

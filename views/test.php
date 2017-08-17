@@ -19,8 +19,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<!--         <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 
 		<!-- jQuery library -->
 
