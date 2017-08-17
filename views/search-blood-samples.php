@@ -35,7 +35,16 @@
             include 'header.php';
         ?>
 
-        <div id="builder"></div>
+        <div class="row">
+            <div class="col-sm-9" id="builder">
+            </div>
+            <div class="col-sm-3">
+                <div id="record_count" style="text-align:center">
+                    <h2>Number of Records Found {{blood_samples.length}}</h2>
+                </div>
+            </div>
+        <!-- <div id="builder"></div> -->
+        </div>
 
         <ul class="list-group row" ng-repeat="blood_sample in blood_samples" ng-click="redirect_to_vials(blood_sample.id)">
             <li class="list-group-item" style="background-color:#8ab1db;"><h5> <b> Blood Sample ID:</b> {{blood_sample.id}} </h5></li>

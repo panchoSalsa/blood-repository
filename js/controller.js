@@ -48,18 +48,19 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
         }
     });
 
-    // $('#builder').on('afterDeleteRule.queryBuilder', function(e, rule) {
 
-    //     if ($('#builder').queryBuilder('validate')) {
-    //         DisplayRecords();
-    //     } else {
-    //         // must call $apply in order to display 0 rows in the view
-    //         // if $apply is not used, then the view will not be updated
-    //         $scope.$apply(function() {
-    //             $scope.rows = [];
-    //         });
-    //     }
-    // });
+    $('#builder').on('afterDeleteRule.queryBuilder', function(e, rule) {
+
+            if ($('#builder').queryBuilder('validate')) {
+                DisplayRecords();
+            } else {
+                // must call $apply in order to display 0 rows in the view
+                // if $apply is not used, then the view will not be updated
+                $scope.$apply(function() {
+                    $scope.blood_samples = [];
+                });
+            }
+    });
 
     function DisplayRecords() {
             var result = $('#builder').queryBuilder('getSQL');
@@ -70,13 +71,6 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             $scope.queryDatabase(query_object);
             //console.log(result);
     }
-
-
-
-
-
-
-
 }]);      
 
 
