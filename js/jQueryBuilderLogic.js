@@ -71,8 +71,8 @@ $('#builder').queryBuilder({
     type: 'string',
     input: 'select',
     values: {
-      'male': 'male',
-      'female': 'female'
+      'M': 'Male',
+      'F': 'Female'
     },
     operators: ['equal', 'not_equal']
   },
@@ -99,7 +99,7 @@ $('#builder').queryBuilder({
   },
   {
     id: 'modified_by',
-    label: 'modified_by',
+    label: 'modified by',
     type: 'string',
     operators: ['equal', 'not_equal', 'contains']
   },

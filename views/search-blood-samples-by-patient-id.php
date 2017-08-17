@@ -37,15 +37,6 @@
 
         <div id="builder"></div>
 
-<!--         <form align= "center" ng-submit="search_blood_samples_by_patient_id(id)">
-            <div class="form-group">
-                <label for="id">Patient ID</label>
-                <input type="patientID" class="form-control" id="id" name="id" placeholder="901" ng-model="id">
-                <small class="form-text text-muted">Enter the patient ID of the sample you want to look up.</small>
-            </div>
-        </form> -->
-
-
         <ul class="list-group row" ng-repeat="blood_sample in blood_samples" ng-click="redirect_to_vials(blood_sample.id)">
             <li class="list-group-item" style="background-color:#8ab1db;"><h5> <b> Blood Sample ID:</b> {{blood_sample.id}} </h5></li>
             <li class="list-group-item col-xs-6"><b>Synd: </b> {{blood_sample.synd}} </li>
@@ -55,7 +46,7 @@
             <li class="list-group-item col-xs-6"><b>Date of Visit: </b> {{blood_sample.visit_date}} </li>
             <li class="list-group-item col-xs-6"><b>Age: </b> {{blood_sample.age}} </li>
             <li class="list-group-item col-xs-6"><b>MMSE: </b> {{blood_sample.mmse}} </li>
-            <li class="list-group-item col-xs-6"><b>Drawn on </b> {{blood_sample.draw_date}} <b> at time </b> {{blood_sample.drawtime}} </li>
+            <li class="list-group-item col-xs-6"><b>Drawn on </b> {{blood_sample.draw_date}} <b> at time </b> {{blood_sample.draw_time}} </li>
             <li class="list-group-item col-xs-6"><b>Frozen Date: </b> {{blood_sample.frozen_date}} </li>
             <li class="list-group-item col-xs-6"><b>Frozen Time: </b> {{blood_sample.frozen_time}} </li>
             <li class="list-group-item col-xs-6"><b>Created By: </b> {{blood_sample.created_by}} </li>
@@ -63,8 +54,10 @@
             <li class="list-group-item col-xs-6"><b>Modified By: </b> {{blood_sample.modified_by}}</li>
             <li class="list-group-item col-xs-6"><b>Modified Date: </b> {{blood_sample.modified_date}} </li>
             <li class="list-group-item col-xs-12"><b>Comments: </b> {{blood_sample.comments}} </li>
-            <li class="list-group-item col-xs-6"><b>Serum Count: </b> {{blood_sample.serum_count}} </li>
-            <li class="list-group-item col-xs-6"><b>Plasma Count: </b> {{blood_sample.plasma_count}} </li>
+            <li class="list-group-item col-xs-6"><b>Sample1 Serum Count: </b> {{blood_sample.sample1_serum_count}} </li>
+            <li class="list-group-item col-xs-6"><b>Sample1 Plasma Count: </b> {{blood_sample.sample1_plasma_count}} </li>
+            <li class="list-group-item col-xs-6"><b>Sample2 Serum Count: </b> {{blood_sample.sample2_serum_count}} </li>
+            <li class="list-group-item col-xs-6"><b>Sample2 Plasma Count: </b> {{blood_sample.sample2_plasma_count}} </li>
         </ul>
 
 
