@@ -20,10 +20,10 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <ul class="nav navbar-nav">
-         <li><a href="index.php">Home</a></li>
-         <li><a href="search-blood-samples-by-patient-id.php">Search Blood Samples By Patient ID</a></li>
+<!--          <li><a href="index.php">Home</a></li> -->
+         <li><a href="search-blood-samples.php">Search Blood Samples</a></li>
          <li><a href="add-blood-sample.php">Add Blood Sample</a></li>
-         <li><a href="search-vials-by-blood-sample-id.php">Search Vials By Blood Sample ID</a></li>
+<!--          <li><a href="search-vials-by-blood-sample-id.php">Search Vials By Blood Sample ID</a></li> -->
         <li><a href="https://login.uci.edu/ucinetid/webauth_logout">Logout</a></li>
         </ul>
       </div>

@@ -32,7 +32,6 @@
             include 'header.php';
         ?>
 
-
         <form id="form" align= "center" ng-submit="search_vials_by_blood_sample(id)">
             <div class="form-group">
                 <label for="id">Blood Sample ID</label>

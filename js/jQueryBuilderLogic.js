@@ -3,26 +3,46 @@
 
 $('#builder').queryBuilder({
 	filters: [{
-    id: 'id',
-    label: 'id',
+    id: 'patient_id',
+    label: 'patient id',
     type: 'integer',
     operators: ['equal', 'not_equal', 'contains'],
     validation: {
       min: 0
     }
   },
+  {
+    id: 'sex',
+    label: 'sex',
+    type: 'string',
+    input: 'select',
+    values: {
+      'M': 'Male',
+      'F': 'Female'
+    },
+    operators: ['equal', 'not_equal']
+  },
+  {
+    id: 'age',
+    label: 'age',
+    type: 'integer',
+    operators: ['equal', 'not_equal', 'contains', 'greater', 'less'],
+    validation: {
+      min: 0
+    }
+  },
+  // {
+  //   id: 'id',
+  //   label: 'id',
+  //   type: 'integer',
+  //   operators: ['equal', 'not_equal', 'contains'],
+  //   validation: {
+  //     min: 0
+  //   }
+  // },
   {
     id: 'study',
     label: 'study',
-    type: 'integer',
-    operators: ['equal', 'not_equal', 'contains'],
-    validation: {
-      min: 0
-    }
-  },
-  {
-    id: 'patient_id',
-    label: 'patient id',
     type: 'integer',
     operators: ['equal', 'not_equal', 'contains'],
     validation: {
@@ -37,7 +57,7 @@ $('#builder').queryBuilder({
   },
   {
     id: 'mci_cat',
-    label: 'mcicat',
+    label: 'MCIcat',
     type: 'string',
     operators: ['equal', 'not_equal', 'contains']
   },
@@ -55,26 +75,6 @@ $('#builder').queryBuilder({
     validation: {
       min: 0
     }
-  },
-  {
-    id: 'age',
-    label: 'age',
-    type: 'integer',
-    operators: ['equal', 'not_equal', 'contains', 'greater', 'less'],
-    validation: {
-      min: 0
-    }
-  },
-  {
-    id: 'sex',
-    label: 'sex',
-    type: 'string',
-    input: 'select',
-    values: {
-      'M': 'Male',
-      'F': 'Female'
-    },
-    operators: ['equal', 'not_equal']
   },
   {
     id: 'mmse',
@@ -103,24 +103,25 @@ $('#builder').queryBuilder({
     type: 'string',
     operators: ['equal', 'not_equal', 'contains']
   },
-  {
-    id: 'serum_count',
-    label: 'serum count',
-    type: 'integer',
-    operators: ['equal', 'not_equal', 'contains'],
-    validation: {
-      min: 0
-    }
-  },
-  {
-    id: 'plasma_count',
-    label: 'plasma count',
-    type: 'integer',
-    operators: ['equal', 'not_equal', 'contains'],
-    validation: {
-      min: 0
-    }
-  }],
+  // {
+  //   id: 'serum_count',
+  //   label: 'serum count',
+  //   type: 'integer',
+  //   operators: ['equal', 'not_equal', 'contains'],
+  //   validation: {
+  //     min: 0
+  //   }
+  // },
+  // {
+  //   id: 'plasma_count',
+  //   label: 'plasma count',
+  //   type: 'integer',
+  //   operators: ['equal', 'not_equal', 'contains'],
+  //   validation: {
+  //     min: 0
+  //   }
+  // }
+  ],
   	allow_groups: false
 });
 
