@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>Vials</title>
+    <title>Blood Sample</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/ui.tabs.css" type="text/css" media="print, projection, screen"/>
@@ -32,8 +32,14 @@
             include 'header.php';
         ?>
 
+        <div class="row">
+            <div class="col-xs-8" style="padding-left:0px;">
+                <h1 style="text-align:left"> <b> Blood Sample ID:</b> {{blood_sample.id}} </h1>
+            </div>
+        </div>
+
         <ul class="list-group row">
-            <li class="list-group-item" style="background-color:#8ab1db;"><h5> Sample1 Location</h5></li>
+            <li class="list-group-item" style="background-color:#FF336E;"><h5> Sample1 Location</h5></li>
             <li class="list-group-item col-xs-6"><b>Freezer: </b> {{blood_sample.sample1_freezer}} </li>
             <li class="list-group-item col-xs-6"><b>Freezer Rack: </b> {{blood_sample.sample1_freezer_rack}} </li>
             <li class="list-group-item col-xs-4"><b>Freezer Box: </b> {{blood_sample.sample1_freezer_box}} </li>
@@ -43,7 +49,7 @@
 
 
         <ul class="list-group row">
-            <li class="list-group-item" style="background-color:#8ab1db;"><h5> Sample2 Location</h5></li>
+            <li class="list-group-item" style="background-color:#33FF80;"><h5> Sample2 Location</h5></li>
             <li class="list-group-item col-xs-6"><b>Freezer: </b> {{blood_sample.sample2_freezer}} </li>
             <li class="list-group-item col-xs-6"><b>Freezer Rack: </b> {{blood_sample.sample2_freezer_rack}} </li>
             <li class="list-group-item col-xs-4"><b>Freezer Box: </b> {{blood_sample.sample2_freezer_box}} </li>

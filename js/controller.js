@@ -1,29 +1,33 @@
 // views/search-
-app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 'MyFactory', 'Query', 
+app.controller('SearchBloodSamples', ['$scope', '$window', '$location', '$http', 'MyFactory', 'Query', 
     function($scope, $window, $location, $http, MyFactory, Query) {
 
     $scope.id = "";
     $scope.blood_samples = [];
 
 
-    $scope.search_blood_samples_by_patient_id = function(id) {
-        if ($scope.id !== "") {
+    // $scope.search_blood_samples_by_patient_id = function(id) {
+    //     if ($scope.id !== "") {
  
-            var request_body = {'id' : id};
+    //         var request_body = {'id' : id};
             
-            MyFactory.search_blood_samples_by_patient_id(request_body)
-                .then(function(res) {
-                    console.log(res);
-                    $scope.blood_samples = res;
-            });
+    //         MyFactory.search_blood_samples_by_patient_id(request_body)
+    //             .then(function(res) {
+    //                 console.log(res);
+    //                 $scope.blood_samples = res;
+    //         });
         
-        } else {
-            $scope.blood_samples = [];
-        }
-    }
+    //     } else {
+    //         $scope.blood_samples = [];
+    //     }
+    // }
 
-    $scope.redirect_to_vials = function(id) {
-            // MyFactory.redirect('../views/search-vials-by-blood-sample-id.php?blood_sample_id='+ id);
+    // $scope.redirect_to_vials = function(id) {
+    //         // MyFactory.redirect('../views/search-vials-by-blood-sample-id.php?blood_sample_id='+ id);
+    //         MyFactory.redirect('../views/blood-sample-location.php?blood_sample_id='+ id);
+    // }
+
+    $scope.redirect_to_blood_sample_location = function(id) {
             MyFactory.redirect('../views/blood-sample-location.php?blood_sample_id='+ id);
     }
 
@@ -43,6 +47,7 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
     // fetch records as rule values get updated in front-end
     $('#builder').on('afterUpdateRuleValue.queryBuilder', function(e, rule) {
         // only hit API if rule value is not empty
+        
         if (rule.value) {
             DisplayRecords();
         }
@@ -56,6 +61,7 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             } else {
                 // must call $apply in order to display 0 rows in the view
                 // if $apply is not used, then the view will not be updated
+                
                 $scope.$apply(function() {
                     $scope.blood_samples = [];
                 });
@@ -66,10 +72,9 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
             var result = $('#builder').queryBuilder('getSQL');
             // must set formData before calling $scope.queryDatabase() because 
             // a post request is sent using formData as the parameter
-            // $scope.formData.query = result.sql;
+
             var query_object = {'query': result.sql};
             $scope.queryDatabase(query_object);
-            //console.log(result);
     }
 }]);      
 
@@ -142,7 +147,7 @@ app.controller('SearchByPatientID', ['$scope', '$window', '$location', '$http', 
 
 
 
-// views/search-vials-by-blood-sample-id controller
+// /views/blood-sample-location.php controller
 app.controller('SearchByBloodSampleID', ['$scope', '$window', '$location', '$http', 'MyFactory', 
     function($scope, $window, $location, $http, MyFactory) {
 

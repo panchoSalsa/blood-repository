@@ -19,7 +19,6 @@
         die("Connection failed: " .$conn->connect_error);
     } 
 
-    // $sql = "select * from blood_samples where " . $data->query . ';';
     $sql = "select * from blood where " . $data->query . ';';
 
     $result= $conn->query($sql);

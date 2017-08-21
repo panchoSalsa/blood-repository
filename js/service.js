@@ -31,7 +31,8 @@ angular.module('BloodRepositoryApp')
 .factory('Query', ['$http', function($http) {
 	return {
 		post_query : function(request_body) {
-			return $http.post('../search/blood-samples-by-patient-id-query.php', request_body);
+			// return $http.post('../search/blood-samples-by-patient-id-query.php', request_body);
+			return $http.post('../search/get-blood-samples.php', request_body);
 		} 
 	};
 }]);
