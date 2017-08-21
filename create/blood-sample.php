@@ -21,7 +21,7 @@
 
 
 
-    //include 'auth-test.php';
+    include '../authentication/check-authentication.php';
 
     // load dbconnect config
     // config folder is located at /var/db-connection
@@ -47,14 +47,14 @@
     $frozen_date = filter_input(INPUT_POST, 'frozen_date', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
 
-    $sample_1_plasma_count = filter_input(INPUT_POST, 'sample_1_plasma_count', FILTER_SANITIZE_NUMBER_INT);
-    $sample_2_plasma_count = filter_input(INPUT_POST, 'sample_2_plasma_count', FILTER_SANITIZE_NUMBER_INT);
-    $sample_1_serum_count = filter_input(INPUT_POST, 'sample_1_serum_count', FILTER_SANITIZE_NUMBER_INT);
-    $sample_2_serum_count = filter_input(INPUT_POST, 'sample_2_serum_count', FILTER_SANITIZE_NUMBER_INT);
+    $sample1_plasma_count = filter_input(INPUT_POST, 'sample1_plasma_count', FILTER_SANITIZE_NUMBER_INT);
+    $sample2_plasma_count = filter_input(INPUT_POST, 'sample2_plasma_count', FILTER_SANITIZE_NUMBER_INT);
+    $sample1_serum_count = filter_input(INPUT_POST, 'sample1_serum_count', FILTER_SANITIZE_NUMBER_INT);
+    $sample2_serum_count = filter_input(INPUT_POST, 'sample2_serum_count', FILTER_SANITIZE_NUMBER_INT);
 
 
-    $total_plasma = $sample_1_plasma_count + $sample_2_plasma_count;
-    $total_serum = $sample_1_serum_count + $sample_2_serum_count;
+    // $total_plasma = $sample_1_plasma_count + $sample_2_plasma_count;
+    // $total_serum = $sample_1_serum_count + $sample_2_serum_count;
 
     // using the following format "Y/m/d" because MySQL stores dates as 0000-00-00
     $visit_date = date("Y/m/d",strtotime($visit_date));
@@ -66,11 +66,35 @@
     // exit();
     $frozen_date = date("Y/m/d",strtotime($frozen_date));
 
-    $sql = "INSERT INTO blood_samples (patient_id, visit, visit_date, frozen_time, frozen_date, plasma_count, serum_count)
+
+    $sample1_freezer = filter_input(INPUT_POST, 'sample1_freezer', FILTER_SANITIZE_NUMBER_INT);
+    $sample1_freezer_rack = filter_input(INPUT_POST, 'sample1_freezer_rack', FILTER_SANITIZE_NUMBER_INT);
+    
+    $sample1_freezer_box = filter_input(INPUT_POST, 'sample1_freezer_box', FILTER_SANITIZE_NUMBER_INT);
+    $sample1_box_row = filter_input(INPUT_POST, 'sample1_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $sample1_box_column = filter_input(INPUT_POST, 'sample1_box_column', FILTER_SANITIZE_NUMBER_INT);
+
+    $sample2_freezer = filter_input(INPUT_POST, 'sample2_freezer', FILTER_SANITIZE_NUMBER_INT);
+    $sample2_freezer_rack = filter_input(INPUT_POST, 'sample2_freezer_rack', FILTER_SANITIZE_NUMBER_INT);
+    
+    $sample2_freezer_box = filter_input(INPUT_POST, 'sample2_freezer_box', FILTER_SANITIZE_NUMBER_INT);
+    $sample2_box_row = filter_input(INPUT_POST, 'sample2_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    $sample2_box_column = filter_input(INPUT_POST, 'sample2_box_column', FILTER_SANITIZE_NUMBER_INT);
+
+    $created_by = $auth_object->ucinetid;
+    $created_date = date("Y/m/d");
+
+
+    $sql = "INSERT INTO blood (patient_id, visit, visit_date, frozen_time, frozen_date, sample1_freezer, sample1_freezer_rack, sample1_freezer_box, sample1_box_row, sample1_box_column, sample2_freezer, sample2_freezer_rack, sample2_freezer_box, sample2_box_row, sample2_box_column, sample1_plasma_count, sample2_plasma_count, sample1_serum_count, sample2_serum_count, created_by, created_date)
     VALUES (". $patient_id . ", " . $visit  . ", '" . $visit_date . "', '"  . $frozen_time . "', '" 
-        . $frozen_date . "', " . $total_plasma . ", " . $total_serum . ");";
+        . $frozen_date . "', " . $sample1_freezer . ", " . $sample1_freezer_rack . ", " . $sample1_freezer_box .
+        ", '" . $sample1_box_row . "', " . $sample1_box_column . ", " . $sample2_freezer . ", " . $sample2_freezer_rack . ", " .
+        $sample2_freezer_box . ", '" . $sample2_box_row . "', " . $sample2_box_column . ", " . $sample1_plasma_count. ", " .
+        $sample2_plasma_count . ", " . $sample1_serum_count. ", " . $sample2_serum_count . ", '" . $created_by . "', '" . $created_date . "'" . ");";
 
 //    print_r($sql);
+
+    error_log($sql);
 
     $blood_sample_id = null;
     if ($conn->query($sql) === TRUE) {
@@ -92,39 +116,40 @@
 
     // Sample 1
     // adding vials to Sample 1 Box
-    $sample_1_box_id = filter_input(INPUT_POST, 'sample_1_box_id', FILTER_SANITIZE_NUMBER_INT);
-    $sample_1_box_row = filter_input(INPUT_POST, 'sample_1_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    $sample_1_box_column = filter_input(INPUT_POST, 'sample_1_box_column', FILTER_SANITIZE_NUMBER_INT);
 
-    for ($i = 0; $i < $sample_1_serum_count; ++$i) {
-            create_vials($sample_1_box_id, $blood_sample_id, 'serum', $sample_1_box_row , $sample_1_box_column, $conn);
-            // $sample_n_box_column keeps track of where to place next blood vial
-            ++$sample_1_box_column;
-    }
+    // $sample_1_box_id = filter_input(INPUT_POST, 'sample_1_box_id', FILTER_SANITIZE_NUMBER_INT);
+    // $sample_1_box_row = filter_input(INPUT_POST, 'sample_1_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    // $sample_1_box_column = filter_input(INPUT_POST, 'sample_1_box_column', FILTER_SANITIZE_NUMBER_INT);
 
-    for ($i = 0; $i < $sample_1_plasma_count; ++$i) {
-            create_vials($sample_1_box_id, $blood_sample_id, 'plasma', $sample_1_box_row , $sample_1_box_column, $conn);
-            // $sample_n_box_column keeps track of where to place next blood vial
-            ++$sample_1_box_column;
-    }
+    // for ($i = 0; $i < $sample_1_serum_count; ++$i) {
+    //         create_vials($sample_1_box_id, $blood_sample_id, 'serum', $sample_1_box_row , $sample_1_box_column, $conn);
+    //         // $sample_n_box_column keeps track of where to place next blood vial
+    //         ++$sample_1_box_column;
+    // }
 
-    // Sample 2
-    // adding vials to Sample 2 Box
-    $sample_2_box_id = filter_input(INPUT_POST, 'sample_2_box_id', FILTER_SANITIZE_NUMBER_INT);
-    $sample_2_box_row = filter_input(INPUT_POST, 'sample_2_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    $sample_2_box_column = filter_input(INPUT_POST, 'sample_2_box_column', FILTER_SANITIZE_NUMBER_INT);
+    // for ($i = 0; $i < $sample_1_plasma_count; ++$i) {
+    //         create_vials($sample_1_box_id, $blood_sample_id, 'plasma', $sample_1_box_row , $sample_1_box_column, $conn);
+    //         // $sample_n_box_column keeps track of where to place next blood vial
+    //         ++$sample_1_box_column;
+    // }
 
-    for ($i = 0; $i < $sample_2_serum_count; ++$i) {
-            create_vials($sample_2_box_id, $blood_sample_id, 'serum', $sample_2_box_row , $sample_2_box_column, $conn);
-            // $sample_n_box_column keeps track of where to place next blood vial
-            ++$sample_2_box_column;
-    }
+    // // Sample 2
+    // // adding vials to Sample 2 Box
+    // $sample_2_box_id = filter_input(INPUT_POST, 'sample_2_box_id', FILTER_SANITIZE_NUMBER_INT);
+    // $sample_2_box_row = filter_input(INPUT_POST, 'sample_2_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+    // $sample_2_box_column = filter_input(INPUT_POST, 'sample_2_box_column', FILTER_SANITIZE_NUMBER_INT);
 
-        for ($i = 0; $i < $sample_2_plasma_count; ++$i) {
-            create_vials($sample_2_box_id, $blood_sample_id, 'plasma', $sample_2_box_row , $sample_2_box_column, $conn);
-            // $sample_n_box_column keeps track of where to place next blood vial
-            ++$sample_2_box_column;
-    }
+    // for ($i = 0; $i < $sample_2_serum_count; ++$i) {
+    //         create_vials($sample_2_box_id, $blood_sample_id, 'serum', $sample_2_box_row , $sample_2_box_column, $conn);
+    //         // $sample_n_box_column keeps track of where to place next blood vial
+    //         ++$sample_2_box_column;
+    // }
+
+    //     for ($i = 0; $i < $sample_2_plasma_count; ++$i) {
+    //         create_vials($sample_2_box_id, $blood_sample_id, 'plasma', $sample_2_box_row , $sample_2_box_column, $conn);
+    //         // $sample_n_box_column keeps track of where to place next blood vial
+    //         ++$sample_2_box_column;
+    // }
 
     $conn -> close();
 
