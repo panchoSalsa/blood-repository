@@ -1,5 +1,6 @@
 <?php
 
+    // check for authentication
     include '../authentication/check-authentication.php';
 
     // load dbconnect config 

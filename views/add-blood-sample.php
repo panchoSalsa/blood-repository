@@ -78,6 +78,7 @@ fieldset.scheduler-border {
 
     <body>
         <?php 
+            // check for authentication
             include '../authentication/check-authentication.php';
             include 'header.php';
         ?>
@@ -158,17 +159,17 @@ fieldset.scheduler-border {
                         <div class="form-group">
 
                           <div class="col-sm-6">
-                           <label for="sample_1_freezer">Freezer</label> 
+                           <label for="sample1_freezer">Freezer</label> 
                            <div>
-                              <select id="sample_1_freezer" class="form-control" name="sample1_freezer" type="text">
+                              <select id="sample1_freezer" class="form-control" name="sample1_freezer" type="text">
                               </select>
                            </div>
                          </div>
 
                           <div class="col-sm-6">
-                           <label for="sample_1_freezer_rack">Freezer Rack</label> 
+                           <label for="sample1_freezer_rack">Freezer Rack</label> 
                            <div>
-                              <select id="sample_1_freezer_rack" class="form-control" name="sample1_freezer_rack" type="text">
+                              <select id="sample1_freezer_rack" class="form-control" name="sample1_freezer_rack" type="text">
                               </select>
                            </div>
                          </div>
@@ -180,24 +181,24 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-4">
-                         <label for="sample_1_box">Box</label>  
+                         <label for="sample1_box">Box</label>  
                          <div>
-                            <select id="sample_1_box"  class="form-control" name="sample1_freezer_box" type="text">
+                            <select id="sample1_box"  class="form-control" name="sample1_freezer_box" type="text">
                             </select>
                          </div>
                        </div>
 
                         <div class="col-sm-4">
-                         <label for="sample_1_box_row">Box Row</label>  
+                         <label for="sample1_box_row">Box Row</label>  
                          <div>
-                            <input id="sample_1_box_row" class="form-control" name="sample1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="B">
+                            <input id="sample1_box_row" class="form-control" name="sample1_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="B">
                          </div>
                        </div>
 
                         <div class="col-sm-4">
-                         <label for="sample_1_box_column">Box Column</label>  
+                         <label for="sample1_box_column">Box Column</label>  
                          <div>
-                            <input id="sample_1_box_column" class="form-control" name="sample1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
+                            <input id="sample1_box_column" class="form-control" name="sample1_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value="5">
                          </div>
                        </div>
 
@@ -209,16 +210,16 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-6">
-                         <label for="sample_1_serum_count">Serum Count</label> 
+                         <label for="sample1_serum_count">Serum Count</label> 
                          <div>
-                            <input id="sample_1_serum_count" class="form-control" name="sample1_serum_count" type="text" value ="4" required pattern="[0-4]">
+                            <input id="sample1_serum_count" class="form-control" name="sample1_serum_count" type="text" value ="4" required pattern="[0-4]">
                          </div>
                        </div>
 
                         <div class="col-sm-6">
-                         <label for="sample_1_plasma_count">Plasma Count</label>  
+                         <label for="sample1_plasma_count">Plasma Count</label>  
                          <div>
-                            <input id="sample_1_plasma_count" class="form-control" name="sample1_plasma_count" type="text" value="4" required pattern="[0-4]">
+                            <input id="sample1_plasma_count" class="form-control" name="sample1_plasma_count" type="text" value="4" required pattern="[0-4]">
                          </div>
                        </div>
 
@@ -234,17 +235,17 @@ fieldset.scheduler-border {
                         <div class="form-group">
 
                           <div class="col-sm-6">
-                           <label for="sample_2_freezer">Freezer</label> 
+                           <label for="sample2_freezer">Freezer</label> 
                            <div>
-                              <select id="sample_2_freezer" class="form-control" name="sample2_freezer" type="text">
+                              <select id="sample2_freezer" class="form-control" name="sample2_freezer" type="text">
                               </select>
                            </div>
                          </div>
 
                           <div class="col-sm-6">
-                           <label for="sample_2_freezer_rack">Freezer Rack</label> 
+                           <label for="sample2_freezer_rack">Freezer Rack</label> 
                            <div>
-                              <select id="sample_2_freezer_rack" class="form-control" name="sample2_freezer_rack" type="text">
+                              <select id="sample2_freezer_rack" class="form-control" name="sample2_freezer_rack" type="text">
                               </select>
                            </div>
                          </div>
@@ -257,24 +258,24 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-4">
-                           <label for="sample_2_box">Box</label>  
+                           <label for="sample2_box">Box</label>  
                            <div>
-                              <select id="sample_2_box"  class="form-control" name="sample2_freezer_box" type="text">
+                              <select id="sample2_box"  class="form-control" name="sample2_freezer_box" type="text">
                             </select>
                            </div>
                         </div>
 
                         <div class="col-sm-4">
-                         <label for="sample_2_box_row">Box Row</label>  
+                         <label for="sample2_box_row">Box Row</label>  
                          <div>
-                            <input id="sample_2_box_row" class="form-control" name="sample2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="C">
+                            <input id="sample2_box_row" class="form-control" name="sample2_box_row" type="text" class="text-uppercase" placeholder="A-H" required pattern="[a-hA-H]" value="C">
                          </div>
                        </div>
 
                         <div class="col-sm-4">
-                         <label for="sample_2_box_column">Box Column</label>  
+                         <label for="sample2_box_column">Box Column</label>  
                          <div>
-                            <input id="sample_2_box_column" class="form-control" name="sample2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
+                            <input id="sample2_box_column" class="form-control" name="sample2_box_column" type="text" placeholder="1-16" min="1" max="16" size="1" maxlength="2" value ="1">
                          </div>
                        </div>
 
@@ -285,16 +286,16 @@ fieldset.scheduler-border {
                       <div class="form-group">
 
                         <div class="col-sm-6">
-                         <label for="sample_2_serum_count">Serum Count</label> 
+                         <label for="sample2_serum_count">Serum Count</label> 
                          <div>
-                            <input id="sample_2_serum_count" class="form-control" name="sample2_serum_count" type="text" value ="4" required pattern="[0-4]">
+                            <input id="sample2_serum_count" class="form-control" name="sample2_serum_count" type="text" value ="4" required pattern="[0-4]">
                          </div>
                        </div>
 
                         <div class="col-sm-6">
-                         <label for="sample_2_plasma_count">Plasma Count</label>  
+                         <label for="sample2_plasma_count">Plasma Count</label>  
                          <div>
-                            <input id="sample_2_plasma_count" class="form-control" name="sample2_plasma_count" type="text" value="4" required pattern="[0-4]">
+                            <input id="sample2_plasma_count" class="form-control" name="sample2_plasma_count" type="text" value="4" required pattern="[0-4]">
                          </div>
                        </div>
 
@@ -318,15 +319,9 @@ fieldset.scheduler-border {
     </div>
 
         <script type="text/javascript">
-            function search_by_id() {
-                var patient_id= document.getElementById('patientID_form').value;
-                window.location= "search.php?id=" + patient_id;
-                return false;
-            }
-        </script>
-
-        <script type="text/javascript">
             $(function () {
+
+                // configuration for time and date pickers.
                 $('#datetimepicker_visit_date').datetimepicker({
                   format: 'MM/DD/YYYY',
                   "defaultDate":new Date()
@@ -343,6 +338,8 @@ fieldset.scheduler-border {
                 });
 
 
+                // retrieve available freezers.
+
                 $.ajax({
                      url: "../search/get-freezers.php",
                      type: "GET",
@@ -357,19 +354,21 @@ fieldset.scheduler-border {
                       }
 
                       // populate select inputs for freezer available
-                      $('#sample_1_freezer').append(listitems);
-                      $('#sample_1_freezer').prop("selectedIndex", -1);
-                      $('#sample_2_freezer').append(listitems);
-                      $('#sample_2_freezer').prop("selectedIndex", -1);
+                      $('#sample1_freezer').append(listitems);
+                      $('#sample1_freezer').prop("selectedIndex", -1);
+                      $('#sample2_freezer').append(listitems);
+                      $('#sample2_freezer').prop("selectedIndex", -1);
                      }
                 });
 
 
-                $('#sample_1_freezer').on('change', function() {
+                // when a freezer is selected, fetch the corresponding racks for the freezer
+
+                $('#sample1_freezer').on('change', function() {
 
                   // clear freezer_rack options
-                  $('#sample_1_freezer_rack').empty();
-                  $('#sample_1_box').empty();
+                  $('#sample1_freezer_rack').empty();
+                  $('#sample1_box').empty();
 
                   var data = {fid: parseInt(this.value)};
 
@@ -388,17 +387,17 @@ fieldset.scheduler-border {
                       }
 
                       // populate select inputs for freezer available
-                      $('#sample_1_freezer_rack').append(listitems);
-                      $('#sample_1_freezer_rack').prop("selectedIndex", -1);
+                      $('#sample1_freezer_rack').append(listitems);
+                      $('#sample1_freezer_rack').prop("selectedIndex", -1);
                      }
                   });
                 });
 
-                $('#sample_2_freezer').on('change', function() {
+                $('#sample2_freezer').on('change', function() {
 
                   // clear freezer_rack options
-                  $('#sample_2_freezer_rack').empty();
-                  $('#sample_2_box').empty();
+                  $('#sample2_freezer_rack').empty();
+                  $('#sample2_box').empty();
 
                   var data = {fid: parseInt(this.value)};
 
@@ -417,18 +416,21 @@ fieldset.scheduler-border {
                       }
 
                       // populate select inputs for freezer available
-                      $('#sample_2_freezer_rack').append(listitems);
+                      $('#sample2_freezer_rack').append(listitems);
 
-                      $('#sample_2_freezer_rack').prop("selectedIndex", -1);
+                      $('#sample2_freezer_rack').prop("selectedIndex", -1);
                      }
                   });
                 });
 
 
-                $('#sample_1_freezer_rack').on('change', function() {
+  
+                // when a rack is selected, fetch the corresponding boxes for the rack
+
+                $('#sample1_freezer_rack').on('change', function() {
 
                   // clear freezer_rack options
-                  $('#sample_1_box').empty();
+                  $('#sample1_box').empty();
 
                   var data = {rid: parseInt(this.value)};
 
@@ -447,18 +449,18 @@ fieldset.scheduler-border {
                       }
 
                       // populate select inputs for freezer available
-                      $('#sample_1_box').append(listitems);
+                      $('#sample1_box').append(listitems);
 
-                      $('#sample_1_box').prop("selectedIndex", -1);
+                      $('#sample1_box').prop("selectedIndex", -1);
                      }
                   });
                 });
 
 
-                $('#sample_2_freezer_rack').on('change', function() {
+                $('#sample2_freezer_rack').on('change', function() {
 
                   // clear freezer_rack options
-                  $('#sample_2_box').empty();
+                  $('#sample2_box').empty();
 
                   var data = {rid: parseInt(this.value)};
 
@@ -477,14 +479,15 @@ fieldset.scheduler-border {
                       }
 
                       // populate select inputs for freezer available
-                      $('#sample_2_box').append(listitems);
+                      $('#sample2_box').append(listitems);
 
-                      $('#sample_2_box').prop("selectedIndex", -1);
+                      $('#sample2_box').prop("selectedIndex", -1);
                      }
                   });
                 });
 
 
+                // handle form submit
                 $("#add-blood-sample-form").submit(function(e) {
 
                       var url = "../create/blood-sample.php"; // the script where you handle the form input.

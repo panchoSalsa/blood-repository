@@ -45,6 +45,7 @@
 
 
         <?php 
+            // check for authentication
             include '../authentication/check-authentication.php';
             include 'header.php';
         ?>

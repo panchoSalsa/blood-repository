@@ -5,8 +5,8 @@
     header("Access-Control-Allow-Credentials: true");
     header('Content-Type: application/json');
 
-
-    //include 'auth-test.php';
+    // check for authentication
+    include '../authentication/check-authentication.php';
 
     // load dbconnect config 
     // config folder is located at /var/db-connection

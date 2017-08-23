@@ -1,26 +1,6 @@
 <?php
 
-    function create_vials($box_id, $blood_sample_id, $blood_sample_type, $box_row, $box_column, $conn) {
-
-        $sql = "INSERT INTO vials (box_id, blood_sample_id, blood_sample_type, box_row, box_column) VALUES ";
-
-        $values = "";
-
-        $values .= "(" . $box_id . ", " . $blood_sample_id . ", '" . $blood_sample_type  . "', '" . $box_row . "', " . $box_column . ");";
-
-        $sql .= $values;
-
-        if ($conn->query($sql) === TRUE) {
-            //echo "New records created successfully";
-            return;
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }
-
-
-
-
+    // check for authentication
     include '../authentication/check-authentication.php';
 
     // load dbconnect config
@@ -53,17 +33,11 @@
     $sample2_serum_count = filter_input(INPUT_POST, 'sample2_serum_count', FILTER_SANITIZE_NUMBER_INT);
 
 
-    // $total_plasma = $sample_1_plasma_count + $sample_2_plasma_count;
-    // $total_serum = $sample_1_serum_count + $sample_2_serum_count;
-
     // using the following format "Y/m/d" because MySQL stores dates as 0000-00-00
     $visit_date = date("Y/m/d",strtotime($visit_date));
 
-    // ****
-    // need to fix how to store time in mysql
+
     $frozen_time = date('H:i:s A', strtotime($frozen_time));
-    // print($frozen_time);
-    // exit();
     $frozen_date = date("Y/m/d",strtotime($frozen_date));
 
 
@@ -92,7 +66,6 @@
         $sample2_freezer_box . ", '" . $sample2_box_row . "', " . $sample2_box_column . ", " . $sample1_plasma_count. ", " .
         $sample2_plasma_count . ", " . $sample1_serum_count. ", " . $sample2_serum_count . ", '" . $created_by . "', '" . $created_date . "'" . ");";
 
-//    print_r($sql);
 
     error_log($sql);
 
@@ -110,46 +83,6 @@
         print_r('failed to create blood sample record');
         exit;
     }
-
-
-    // include 'create-vials.php';
-
-    // Sample 1
-    // adding vials to Sample 1 Box
-
-    // $sample_1_box_id = filter_input(INPUT_POST, 'sample_1_box_id', FILTER_SANITIZE_NUMBER_INT);
-    // $sample_1_box_row = filter_input(INPUT_POST, 'sample_1_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    // $sample_1_box_column = filter_input(INPUT_POST, 'sample_1_box_column', FILTER_SANITIZE_NUMBER_INT);
-
-    // for ($i = 0; $i < $sample_1_serum_count; ++$i) {
-    //         create_vials($sample_1_box_id, $blood_sample_id, 'serum', $sample_1_box_row , $sample_1_box_column, $conn);
-    //         // $sample_n_box_column keeps track of where to place next blood vial
-    //         ++$sample_1_box_column;
-    // }
-
-    // for ($i = 0; $i < $sample_1_plasma_count; ++$i) {
-    //         create_vials($sample_1_box_id, $blood_sample_id, 'plasma', $sample_1_box_row , $sample_1_box_column, $conn);
-    //         // $sample_n_box_column keeps track of where to place next blood vial
-    //         ++$sample_1_box_column;
-    // }
-
-    // // Sample 2
-    // // adding vials to Sample 2 Box
-    // $sample_2_box_id = filter_input(INPUT_POST, 'sample_2_box_id', FILTER_SANITIZE_NUMBER_INT);
-    // $sample_2_box_row = filter_input(INPUT_POST, 'sample_2_box_row', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    // $sample_2_box_column = filter_input(INPUT_POST, 'sample_2_box_column', FILTER_SANITIZE_NUMBER_INT);
-
-    // for ($i = 0; $i < $sample_2_serum_count; ++$i) {
-    //         create_vials($sample_2_box_id, $blood_sample_id, 'serum', $sample_2_box_row , $sample_2_box_column, $conn);
-    //         // $sample_n_box_column keeps track of where to place next blood vial
-    //         ++$sample_2_box_column;
-    // }
-
-    //     for ($i = 0; $i < $sample_2_plasma_count; ++$i) {
-    //         create_vials($sample_2_box_id, $blood_sample_id, 'plasma', $sample_2_box_row , $sample_2_box_column, $conn);
-    //         // $sample_n_box_column keeps track of where to place next blood vial
-    //         ++$sample_2_box_column;
-    // }
 
     $conn -> close();
 
