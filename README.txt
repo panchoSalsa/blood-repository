@@ -8,6 +8,13 @@ Linux is the OS being used.
 This app also uses Angular for the front end.
 Read about controllers and services to understand how to asynchronously fetch data and render it.
 
+
+
+****************************************************************************************************************
+
+project architecture
+
+
 folders
 
 authentication
@@ -54,12 +61,60 @@ views
 	blood-sample-location.php  displays the location of sample1 and sample2 of the selected blood sample based
 	on blood sample id.
 
+
+
 ****************************************************************************************************************
 
 other important files
+
+
+index.php this is the first page a user sees when login into http://iba05.brainaging.uci.edu/
+index.php requires on two files 'authentication/index-check-authentication.php' and 
+'index-header.php'.
+
+the differences between 'authentication/index-check-authentication.php' and 'authentication/check-authentication.php'
+
+is that they use relative paths, since index.php is on the app's root directory i had to create
+a slighlty different header and authentication file.
+
+
 
 blood_repoDB.sql contains the schemas of every table in our `blood_repo` database.
 
 /var/db-connection/dbconfig.php contains the credentials for `blood_repo` database.
 
 Blood Repository Documentation.pdf is a file created by Kevin that explains the goal of this project.
+
+
+****************************************************************************************************************
+
+Debuggin server-side php
+
+
+
+use this function to print to the error log 
+error_log($variable);
+
+if you ssh to the blood-repo machine 128.195.163.229
+
+you can open the error log by typing
+$ error
+
+you should see something like this 
+
+----------------------------------------------------------------------------------------------------------------
+[Wed Aug 23 16:24:59.955461 2017] [:error] [pid 53624] [client 128.195.163.154:65379] PHP Notice:  Undefined index: ucinetid_auth in /var/www/authentication/WebAuth.php on line 94
+[Wed Aug 23 16:24:59.955488 2017] [:error] [pid 53624] [client 128.195.163.154:65379] PHP Stack trace:
+[Wed Aug 23 16:24:59.955521 2017] [:error] [pid 53624] [client 128.195.163.154:65379] PHP   1. {main}() /var/www/views/search-blood-samples.php:0
+[Wed Aug 23 16:24:59.955532 2017] [:error] [pid 53624] [client 128.195.163.154:65379] PHP   2. include() /var/www/views/search-blood-samples.php:34
+[Wed Aug 23 16:24:59.955540 2017] [:error] [pid 53624] [client 128.195.163.154:65379] PHP   3. WebAuth->WebAuth() /var/www/authentication/check-authentication.php:67
+[Wed Aug 23 16:49:48.317690 2017] [:error] [pid 57768] [client 128.195.163.154:60542] PHP Notice:  Undefined index: ucinetid_auth in /var/www/authentication/WebAuth.php on line 94
+[Wed Aug 23 16:49:48.317718 2017] [:error] [pid 57768] [client 128.195.163.154:60542] PHP Stack trace:
+[Wed Aug 23 16:49:48.317751 2017] [:error] [pid 57768] [client 128.195.163.154:60542] PHP   1. {main}() /var/www/views/search-blood-samples.php:0
+[Wed Aug 23 16:49:48.317762 2017] [:error] [pid 57768] [client 128.195.163.154:60542] PHP   2. include() /var/www/views/search-blood-samples.php:34
+[Wed Aug 23 16:49:48.317770 2017] [:error] [pid 57768] [client 128.195.163.154:60542] PHP   3. WebAuth->WebAuth() /var/www/authentication/check-authentication.php:64
+----------------------------------------------------------------------------------------------------------------
+
+you should a similar ouput.
+you can ouput write to the error log by using the error_log($variable); function
+this makes it very convinient when trying to debug php code.

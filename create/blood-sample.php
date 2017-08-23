@@ -33,9 +33,8 @@
     $sample2_serum_count = filter_input(INPUT_POST, 'sample2_serum_count', FILTER_SANITIZE_NUMBER_INT);
 
 
-    // using the following format "Y/m/d" because MySQL stores dates as 0000-00-00
+    // using the following format "Y/m/d" because MySQL stores dates as 0000-00-00 (Year-Month-Day)
     $visit_date = date("Y/m/d",strtotime($visit_date));
-
 
     $frozen_time = date('H:i:s A', strtotime($frozen_time));
     $frozen_date = date("Y/m/d",strtotime($frozen_date));
@@ -66,9 +65,6 @@
         $sample2_freezer_box . ", '" . $sample2_box_row . "', " . $sample2_box_column . ", " . $sample1_plasma_count. ", " .
         $sample2_plasma_count . ", " . $sample1_serum_count. ", " . $sample2_serum_count . ", '" . $created_by . "', '" . $created_date . "'" . ");";
 
-
-    error_log($sql);
-
     $blood_sample_id = null;
     if ($conn->query($sql) === TRUE) {
         // retrive the id of created blood_sample.
@@ -78,14 +74,11 @@
         exit;
     }
 
-    // check $blood_sample_id 
+    // check $blood_sample_id  to make sure a blood sample was created.
     if (is_null($blood_sample_id)) {
         print_r('failed to create blood sample record');
         exit;
     }
 
     $conn -> close();
-
-    // return $blood_sample_id so that we can display the vials created.
-    echo $blood_sample_id;
 ?>

@@ -44,10 +44,11 @@
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 
-        <?php 
-            // check for authentication
-            include '../authentication/check-authentication.php';
-            include 'header.php';
+
+        <?php
+            //include authentication and header files for index page
+            include 'authentication/index-check-authentication.php';
+            include 'index-header.php';
         ?>
 
     </head>

@@ -8,6 +8,9 @@
     include '../../db-connection/dbconfig.php';
 
 
+    // fid represents the freezer_id
+    // retrive fid from POST parameters
+    
     $fid = filter_input(INPUT_POST, 'fid', FILTER_SANITIZE_NUMBER_INT);
 
     $conn = new mysqli($servername, $username, $password, $dbname);

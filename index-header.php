@@ -19,8 +19,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <ul class="nav navbar-nav">
-         <li><a href="search-blood-samples.php">Search Blood Samples</a></li>
-         <li><a href="add-blood-sample.php">Add Blood Sample</a></li>
+         <li><a href="views/search-blood-samples.php">Search Blood Samples</a></li>
+         <li><a href="views/add-blood-sample.php">Add Blood Sample</a></li>
         <li><a href="https://login.uci.edu/ucinetid/webauth_logout">Logout</a></li>
         </ul>
       </div>

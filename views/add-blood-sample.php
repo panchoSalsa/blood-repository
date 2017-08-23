@@ -500,7 +500,8 @@ fieldset.scheduler-border {
                                 // blood sample successfully created show vials
                                 
                                 alert('Blood Sample Created');
-                                // clear input fields
+                                
+                                // to-do clear form input fields
                              }
                            });
 

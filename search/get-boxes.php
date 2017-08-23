@@ -8,6 +8,9 @@
     include '../../db-connection/dbconfig.php';
 
 
+    // rid represents the rack_id
+    // retrive rid from POST parameters
+
     $rid = filter_input(INPUT_POST, 'rid', FILTER_SANITIZE_NUMBER_INT);
 
     $conn = new mysqli($servername, $username, $password, $dbname);

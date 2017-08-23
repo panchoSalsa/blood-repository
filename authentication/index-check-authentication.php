@@ -15,7 +15,7 @@
 	function checkID($id) {
 
 		// load dbconnect config
-		include '../../db-connection/dbconfig.php';
+		include '../db-connection/dbconfig.php';
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn -> connect_error) {
