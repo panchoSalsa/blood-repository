@@ -8,8 +8,6 @@ Linux is the OS being used.
 This app also uses Angular for the front end.
 Read about controllers and services to understand how to asynchronously fetch data and render it.
 
-
-
 ****************************************************************************************************************
 
 project architecture
