@@ -12,7 +12,6 @@ Read about controllers and services to understand how to asynchronously fetch da
 
 project architecture
 
-
 folders
 
 authentication
